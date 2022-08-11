@@ -16,8 +16,12 @@
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^5.1.0",
+    "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.6.0",
-    "sass": "^1.52.3"
+    "jquery-form-styler": "^2.0.2",
+    "magnific-popup": "^1.1.0",
+    "sass": "^1.52.3",
+    "slick-carousel": "^1.8.1"
   }
 }
