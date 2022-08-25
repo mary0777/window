@@ -1,0 +1,28 @@
+.footer {
+  background-color: $c-default;
+  padding: 52px 0 55px;
+  color: #fff;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin-right: 22px;
+  }
+
+  &__copy {
+    margin-right: auto;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 2.5;
+
+    &:not(:last-child) {
+      margin-right: 22px;
+    }
+  }
+}
