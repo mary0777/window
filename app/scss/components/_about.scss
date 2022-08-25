@@ -252,6 +252,15 @@
     padding: 95px 100px;
     background-color: #fff;
   }
+  &__certificates + .about__item {
+    display: block;
+    height: 0;
+    overflow: hidden;
+
+  }
+  .about__item--active {
+    height: auto;
+  }
 
   &__certificates-slider {
 
