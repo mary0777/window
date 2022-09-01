@@ -1,0 +1,233 @@
+.contacts {
+  padding-bottom: 40px;
+
+
+  &__inner {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__info {
+    position: relative;
+  }
+
+  &__img{
+    position: absolute;
+    bottom: -40px;
+    right: -90px;
+    width: 327px;
+    height: 365px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    z-index: 1;
+  }
+
+  &__list {
+    margin-bottom: 58px;
+  }
+
+  &__list-text{
+    font-weight: 700;
+font-size: 18px;
+margin-bottom: 20px;
+display: block;
+  }
+
+  &__item {
+    &:not(:last-child){
+      margin-bottom: 25px;
+    }
+  }
+
+  &__link {
+    padding-left: 50px;
+    position: relative;
+    font-size: 18px;
+color: $c-black;
+
+    &::before{
+      @include pseudo;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--phone{
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1.6;
+      &::before{
+        background-image: url(../../images/icons/phone.svg);
+        width: 25px;
+        height: 27px;
+      }
+    }
+    &--address::before{
+      background-image: url(../../images/icons/location.svg);
+      width: 20px;
+      height: 26px;
+    }
+    &--email::before{
+      background-image: url(../../images/icons/email.svg);
+      width: 20px;
+      height: 22px;
+    }
+  }
+
+  &__link-phone {
+    &:not(:last-child){
+      margin-right: 50px;
+    }
+  }
+
+  &__text {
+    max-width: 230px;
+    margin-bottom: 20px;
+  }
+
+  &__social {
+   
+  }
+
+  &__form{
+    max-width: 510px; 
+    width: 100%;
+    padding: 52px 57px 46px 60px;
+    background-color: #fff;
+    margin: 0;
+    // z-index: -1;
+  }
+
+  &__title{
+    padding-left: 0;
+    color: $c-default;
+  }
+
+  &__input,
+  &__textarea{
+    background-color: #e2e2e2;
+  }
+
+  &__textarea{
+    resize: none;
+    min-height: 135px;
+    position: relative;
+    display: block;
+    overflow-y: scroll;
+
+    // &::-webkit-scrollbar {
+    //   width: 12px;             
+    // }
+
+    // &::-webkit-scrollbar-track {
+    //   background: orange;        /* цвет зоны отслеживания */
+    // }
+
+    // &::-webkit-scrollbar-button{
+    //     width: 16px;
+    //     height: 8px;
+    //     top: 0;
+    //     right: 14px;
+    //     background-image: url(../images/icons/text-area-top.svg);
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+       
+
+    // }
+
+    &::before{
+      @include pseudo;
+    width: 16px;
+    height: 8px;
+    top: 0;
+    right: 14px;
+    background-image: url(../images/icons/text-area-top.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+  }
+
+  &__label-checkbox{
+    color: $c-default;
+&::before{
+background-color:#e2e2e2;
+}
+  }
+
+  &__btn{
+    background-color: $c-default;
+    color: #fff;
+  }
+
+}
+
+.social {
+  display: flex;
+
+  &__item {
+    &:not(:last-child){
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background-color: $c-orange;
+    width: 26px;
+    height: 25px;
+    display: block;
+    transition: background-color 0.4s linear;
+
+    &:hover{
+      background-color: $c-default;
+    }
+  }
+}
+.order-popup {
+
+  &__title {
+  }
+
+  &__title--calculation {
+  }
+
+  &__fieldset {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__label {
+  }
+
+  &__input {
+  }
+
+  &__link {
+  }
+
+  &__link--calculation {
+  }
+
+  &__btn {
+  }
+
+  &__btn--calculation {
+  }
+}
+.order-popup--calculation {
+}
+.input-checkbox {
+}
+.label-checkbox {
+}
+.btn {
+}
