@@ -166,3 +166,222 @@ body {
 
   }
 }
+
+
+.measurements-link,
+.calculation-link {
+  padding: 12px 19px 12px 47px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 3px;
+  position: relative;
+  display: inline-block;
+
+  &::before {
+    @include pseudo;
+    display: block;
+    width: 20px;
+    height: 18px;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.measurements-link {
+  background-color: $c-orange;
+  margin-left: auto;
+  margin-right: 14px;
+
+  &::before {
+    background-image: url(../images/icons/measurements.svg);
+  }
+}
+
+.calculation-link {
+  background-color: #3B3A63;
+
+  &::before {
+    background-image: url(../images/icons/calculation.svg);
+  }
+}
+
+.order-popup {
+  max-width: 595px;
+  margin: 0 auto;
+  padding: 56px 100px 70px;
+  border-radius: 10px;
+  position: relative;
+
+  &--measurements {
+    background-color: $c-orange;
+  }
+
+  &--calculation {
+    background-color: $c-default;
+  }
+
+  &__fieldset {
+    border: transparent;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    padding-left: 56px;
+    position: relative;
+    margin-bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+
+    &::before {
+      @include pseudo;
+      display: block;
+      width: 30px;
+      height: 27px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &--measurements {
+      &::before {
+        background-image: url(../images/icons/measurements.svg);
+
+      }
+    }
+
+    &--calculation {
+      &::before {
+        background-image: url(../images/icons/calculation.svg);
+      }
+    }
+  }
+
+  &__list {}
+
+  &__item {
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 21px;
+    }
+
+    &:last-child {
+      margin-bottom: 38px;
+    }
+  }
+
+  &__label {}
+
+  &__input {
+    width: 100%;
+    padding: 17px;
+    outline: transparent;
+    border-radius: 3px;
+    border: transparent;
+
+    &::placeholder {
+      color: #424268;
+    }
+  }
+
+  .label-textarea {
+    min-height: 135px;
+    width: 100%;
+    background-color: #e2e2e2;
+    border-radius: 3px;
+  }
+
+  &__textarea {
+    resize: none;
+    display: block;
+    max-width: 380px;
+    width: 100%;
+    height: 110px;
+    margin-top: 12px;
+    padding: 5px 17px 0;
+    background-color: #e2e2e2;
+    overflow-y: scroll;
+    outline: transparent;
+    border: transparent;
+
+    &::placeholder {
+      color: #424268;
+    }
+
+    &::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    &::-webkit-scrollbar-button:vertical:start:decrement,
+    &::-webkit-scrollbar-button:vertical:end:increment {
+      width: 16px;
+      height: 8px;
+      background-image: url(../images/icons/text-area-bottom.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &::-webkit-scrollbar-button:vertical:start:decrement {
+      background-image: url(../images/icons/text-area-top.svg);
+    }
+
+    &::-webkit-scrollbar-button:vertical:end:increment {
+      background-image: url(../images/icons/text-area-bottom.svg);
+    }
+  }
+
+  &__link {
+    color: $c-default;
+
+    &--calculation {
+      color: $c-orange;
+    }
+  }
+
+  &__btn {
+
+    &--calculation {
+      color: $c-default;
+    }
+
+    &--measurements {
+      color: $c-orange;
+    }
+  }
+
+  .mfp-container {
+    width: 100%;
+    max-width: 595px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mfp-close {
+    position: absolute;
+    background-color: #fff;
+    top: 26px;
+    right: 20px;
+    width: 21px;
+    height: 21px;
+    opacity: 1;
+    font-size: 0;
+    mask-image: url(../images/sprite.svg#close-icon);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+}

@@ -6,9 +6,7 @@
       display: block;
     }
   }
-
 }
-
 
 .about {
   margin-bottom: 87px;
@@ -72,7 +70,7 @@
       background-image: url(../../images/about/play-popup.png);
       background-position: center center;
       background-size: cover;
-      transition: width 0.4s ease, height 0.4s ease;
+      transition: width 0.5s ease, height 0.5s ease;
       z-index: 1;
     }
 
@@ -83,8 +81,8 @@
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: -1;
-      transition: all 0.5s ease;
+      opacity: 0;
+      transition: opacity 0.5s linear;
     }
 
     &:hover {
@@ -95,7 +93,7 @@
       }
 
       &::after {
-        z-index: 0;
+        opacity: 1;
       }
     }
   }
@@ -244,41 +242,66 @@
 
   &__reviews {}
 
-  &__reviews-slider {}
+  &__reviews-slider {
+    padding: 55px 35px;
+    background-color: #fff;
+  }
 
   &__reviews-item {}
 
-  &__certificates {
-    padding: 95px 100px;
-    background-color: #fff;
-  }
-  &__certificates + .about__item {
-    display: block;
-    height: 0;
-    overflow: hidden;
-
-  }
-  .about__item--active {
-    height: auto;
+  &__reviews-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 38px;
   }
 
-  &__certificates-slider {
+  &__reviews-name {
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 60px;
+  }
 
-    .slick-list {
-      margin-left: 8px;
-      padding-left: 38px;
+  &__reviews-contract {
+    font-size: 14px;
+    color: #8f8f8f;
+    line-height: 1;
+  }
+
+  &__reviews-date {
+    margin-right: 15px;
+  }
+
+  &__reviews-link {
+    margin-left: auto;
+    font-weight: 700;
+    color: #fff;
+    background-color: $c-orange;
+    padding: 17px 28px 15px 64px;
+    border-radius: 3px;
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      width: 25px;
+      height: 23px;
+      left: 20px;
+      background-image: url('../images/icons/reviews.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__reviews-text {
+    color: #434343;
+    max-width: 795px;
+    margin: 0 auto;
+    position: relative;
+
+    p:not(:last-child) {
+      margin-bottom: 20px;
     }
 
-    .slick-track {
-      padding: 15px 0;
-    }
-
-    .slick-current {
-      filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
-      transition: 0.4s ease;
-    }
-  
-    .slick__btn {
+    .slick-btn {
       @include pseudo;
       top: 50%;
       transform: translateY(-50%);
@@ -289,77 +312,162 @@
       mask-position: center;
       mask-size: contain;
       z-index: 2;
+      cursor: pointer;
       transition: background-color 0.4s linear;
-  
+
       &--prev {
-        left: -40px;
+        left: -70px;
         mask-image: url(../../images/icons/slider-arrow-left.svg);
       }
-  
+
       &--next {
-        right: -40px;
+        right: -70px;
         mask-image: url(../../images/icons/slider-arrow-rigth.svg);
       }
-  
+
       &:hover {
         background-color: $c-orange;
       }
     }
   }
 
-  &__certificates-boximg{
-    &:hover{
+  &__reviews-form {
+    background-color: #fff;
 
-      filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
-        transition: 0.4s ease;
+    .mfp-close {
+      background-color: #000000;
     }
   }
 
-  &__certificates-img {
-   
+    &__reviews-title {
+      color: $c-default;
+      padding-left: 0;
+      display: block;
+      text-align: center;
+
+      &::before {
+        background-image: url('../images/icons/reviews-orange.svg');
+      }
+    }
+
+    &__reviews-input{
+      background-color: #e2e2e2;
+    }
+
+    &__reviews-checkbox {
+      color: #111e97;
+
+      &::before {
+        background-color: #e2e2e2;
+      }
+    }
+
+    &__reviews-btn {
+      background-color: $c-orange;
+      color: #fff;
+    }
+
+    &__certificates {
+      background-color: #fff;
+    }
+
+    &__certificates-slider {
+      padding: 95px 100px;
+
+      .slick-list {
+        margin-left: 8px;
+        padding-left: 38px;
+      }
+
+      .slick-track {
+        padding: 15px 0;
+      }
+
+      .slick-current {
+        filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
+        transition: 0.4s ease;
+      }
+
+      .slick__btn {
+        @include pseudo;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 48px;
+        background-color: $c-black;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+        z-index: 2;
+        transition: background-color 0.4s linear;
+
+        &--prev {
+          left: 40px;
+          mask-image: url(../../images/icons/slider-arrow-left.svg);
+        }
+
+        &--next {
+          right: 40px;
+          mask-image: url(../../images/icons/slider-arrow-rigth.svg);
+        }
+
+        &:hover {
+          background-color: $c-orange;
+        }
+      }
+    }
+
+    &__certificates-boximg {
+      &:hover {
+
+        filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
+        transition: 0.4s ease;
+      }
+    }
+
+    &__certificates-img {}
   }
-}
 
-.container {}
+  .container {}
 
-.title {}
+  .title {}
 
-.tabs {
+  .tabs {
 
-  &__item {}
-}
+    &__item {}
+  }
 
-.measurements-link {}
+  .measurements-link {}
 
-.mfp-hide {}
+  .mfp-hide {}
 
-.order-popup {
+  .order-popup {
 
-  &__title {}
+    &__title {}
 
-  &__title--measurements {}
+    &__title--measurements {}
 
-  &__fieldset {}
+    &__fieldset {}
 
-  &__list {}
+    &__list {}
 
-  &__item {}
+    &__item {}
 
-  &__label {}
+    &__label {}
 
-  &__input {}
+    &__input {}
 
-  &__link {}
+    &__link {}
 
-  &__btn {}
+    &__btn {}
 
-  &__btn--measurements {}
-}
+    &__btn--measurements {}
+  }
 
-.order-popup--measurements {}
+  .order-popup--measurements {}
 
-.input-checkbox {}
+  .input-checkbox {}
 
-.label-checkbox {}
+  .label-checkbox {}
 
-.btn {}
+  .btn {}
