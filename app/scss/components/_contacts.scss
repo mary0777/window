@@ -1,10 +1,13 @@
 .contacts {
   padding-bottom: 40px;
 
-
   &__inner {
     display: flex;
     justify-content: space-around;
+
+    @include r($r-lg) {
+      flex-direction: column;
+    }
   }
 
   &__info {
@@ -20,10 +23,22 @@
     background-repeat: no-repeat;
     background-size: auto;
     z-index: 1;
+
+    @include r($r-xl) {
+      opacity: 0.2;
+    }
+
+    @include r($r-lg) {
+      display: none;
+    }
   }
 
   &__list {
     margin-bottom: 58px;
+
+    @include r($r-lg) {
+      margin-bottom: 30px;
+    }
   }
 
   &__list-text {
@@ -40,10 +55,16 @@
   }
 
   &__link {
+    display: flex;
+    flex-wrap: wrap;
     padding-left: 50px;
     position: relative;
     font-size: 18px;
     color: $c-black;
+
+    @include r($r-sm) {
+      font-size: 16px;
+    }
 
     &::before {
       @include pseudo;
@@ -59,6 +80,10 @@
       font-weight: 700;
       font-size: 22px;
       line-height: 1.6;
+
+      @include r($r-sm) {
+        font-size: 16px;
+      }
 
       &::before {
         background-image: url(../../images/icons/phone.svg);
@@ -89,9 +114,17 @@
   &__text {
     max-width: 230px;
     margin-bottom: 20px;
+
+    @include r($r-lg) {
+      max-width: 100%;
+    }
   }
 
-  &__social {}
+  &__social {
+    @include r($r-lg) {
+      margin-bottom: 20px;
+    }
+  }
 
   &__form {
     max-width: 510px;
@@ -99,7 +132,14 @@
     padding: 52px 57px 46px 60px;
     background-color: #fff;
     margin: 0;
-    // z-index: -1;
+
+    @include r($r-lg) {
+      margin: 0 auto;
+    }
+
+    @include r($r-sm) {
+      padding: 25px 20px 30px 20px;
+    }
   }
 
   &__title {
@@ -107,7 +147,7 @@
     color: $c-default;
   }
 
-  &__input{
+  &__input {
     background-color: #e2e2e2;
   }
 
@@ -122,8 +162,11 @@
   &__btn {
     background-color: $c-default;
     color: #fff;
-  }
 
+    @include r($r-sm) {
+      padding: 15px 20px;
+    }
+  }
 }
 
 .social {
@@ -150,36 +193,3 @@
     }
   }
 }
-
-.order-popup {
-
-  &__title {}
-
-  &__title--calculation {}
-
-  &__fieldset {}
-
-  &__list {}
-
-  &__item {}
-
-  &__label {}
-
-  &__input {}
-
-  &__link {}
-
-  &__link--calculation {}
-
-  &__btn {}
-
-  &__btn--calculation {}
-}
-
-.order-popup--calculation {}
-
-.input-checkbox {}
-
-.label-checkbox {}
-
-.btn {}

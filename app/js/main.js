@@ -1,3 +1,45 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+  const burgerOpen = document.querySelector('.burger--open');
+  const burgerClose = document.querySelector('.burger--close');
+  const mobileMenu = document.querySelector('.menu');
+  const bodyLock = document.querySelector('body');
+
+
+  burgerOpen.addEventListener('click', function (e) {
+    mobileMenu.classList.add('menu--active');
+    burgerClose.classList.add('burger--active');
+    bodyLock.classList.add('lock');
+  });
+
+  burgerClose.addEventListener('click', function (e) {
+    mobileMenu.classList.remove('menu--active');
+    burgerClose.classList.remove('burger--active');
+    bodyLock.classList.remove('lock');
+  });
+
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('lock')) {
+      burgerClose.classList.remove('burger--active');
+      mobileMenu.classList.remove('menu--active');
+      bodyLock.classList.remove('lock');
+    }
+  });
+});
+
+$(document).ready(function(){
+      $(".menu__link").on("click", function (event) {
+          event.preventDefault();
+          var id  = $(this).attr('href'),
+              top = $(id).offset().top - 50;
+        $('body,html').animate({ scrollTop: top }, 1500);
+        $('.burger--close').removeClass('burger--active');
+        $('.menu').removeClass('menu--active');
+        $('body').removeClass('lock');
+      });
+  });
+  
+
 $(function () {
 
   $('.measurements-link, .calculation-link').magnificPopup({
@@ -50,7 +92,16 @@ $(function () {
     fade: true,
     infinite: false,
     prevArrow: '<button type="button" class="slick__btn slick__btn--prev"></button>',
-    nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>'
+    nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>',
+    responsive: [
+      {
+        breakpoint: 993,
+        settings: {
+          arrows: false,
+         dots: true
+        }
+      }
+    ]
   });
 });
 
@@ -64,15 +115,30 @@ $(function () {
     slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: '<button type="button" class="slick__btn slick__btn--prev"></button>',
-    nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>'
+    nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>',
+    responsive: [
+      {
+        breakpoint: 1201,
+        settings: {
+          slidesToShow: 3,
+          centerMode: true,
+          variableWidth: true,
+          arrows: false,
+         dots: true
+        }
+      }
+    ]
   });
+  // $('.portfolio__slider').magnificPopup({
+  //   delegate: '.portfolio__link'
+  // });
 });
 
 
 var portfolioSlick = $('.portfolio__info-slider').slick({
   dots: true,
   arrows: false,
-  fade: true,
+  fade: true
 });
 
 $(function () {
@@ -86,6 +152,7 @@ $(function () {
     }
   });
 });
+
 
 
 $(function () {
@@ -104,7 +171,15 @@ $(function () {
 $(function () {  
   $('.about__reviews-slider').slick({
     fade: true,
- arrows: false
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 993,
+        settings: {
+          dots: true
+        }
+      }
+    ]
   });
    
   $(document).on('click', '.slick-btn--next', function () {
@@ -122,30 +197,49 @@ $(function () {
 });
 
 
-// $(function () {  
-//   $('.about__reviews-slider').slick({
-//     // fade: true,
-//  arrows: true,
-//     appendArrows: $('.slider-arrows'),
-//     prevArrow: '<button type="button" class="slick__btn slick__btn--prev"></button>',
-//     nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>',
-    
-//   });
-
-//   $('.about__reviews-slider').magnificPopup({
-//     delegate: '.about__reviews-link',
-//     type: 'inline'
-//     });
-// });
-
-
-
 $(function () {  
   $('.about__certificates-slider').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
+    infinite: true,
     prevArrow: '<button type="button" class="slick__btn slick__btn--prev"></button>',
-    nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>'
+    nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>',
+    responsive: [
+      {
+        breakpoint: 1201,
+        settings: {
+          slidesToShow: 3,
+          centerMode: true,
+          variableWidth: true
+        }
+      },
+      {
+        breakpoint: 993,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+          variableWidth: true
+        }
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          variableWidth: true
+        }
+      },
+      {
+        breakpoint: 577,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          variableWidth: true,
+          arrows: false,
+         dots: true
+        }
+      }
+    ]
   });
 });
 

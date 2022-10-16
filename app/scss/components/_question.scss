@@ -1,15 +1,32 @@
 .question {
   margin-bottom: 87px;
 
+  @include r($r-sm) {
+    margin-bottom: 50px;
+  }
+
   &__wrapper {
     background-color: $c-orange;
     border-radius: 7px;
     padding: 40px 100px 65px;
+
+    @include r($r-md) {
+      padding: 30px 40px 50px;
+    }
+
+    @include r($r-sm) {
+      font-size: 16px;
+      padding: 30px 10px 35px;
+    }
   }
 
   &__title {
     margin-bottom: 50px;
     color: #fff;
+
+    @include r($r-md) {
+      margin-bottom: 30px;
+    }
   }
 
   &__item {
@@ -39,9 +56,14 @@
     cursor: pointer;
     font-weight: 700;
     font-size: 18px;
-    padding: 30px 20px 25px;
+    padding: 30px 55px 25px 20px;
     position: relative;
     transition: color 0.4s linear;
+
+    @include r($r-sm) {
+      font-size: 16px;
+      padding: 10px 35px 15px 10px;
+    }
 
     &::before {
       @include pseudo;
@@ -53,12 +75,16 @@
       mask-repeat: no-repeat;
       mask-size: cover;
       transition: background-color 0.4s linear, transform 0.4s linear;
+
+      @include r($r-sm) {
+        right: 5px;
+      }
     }
 
-    &--active{
-        &::before{
-         transform: rotate(180deg);
-        }
+    &--active {
+      &::before {
+        transform: rotate(180deg);
+      }
     }
   }
 
@@ -68,5 +94,10 @@
     font-size: 16px;
     color: #000000;
     display: none;
+
+    @include r($r-sm) {
+      padding: 0 10px 15px;
+      font-size: 14px;
+    }
   }
 }

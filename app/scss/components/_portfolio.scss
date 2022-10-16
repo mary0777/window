@@ -1,21 +1,38 @@
 .portfolio {
   margin-bottom: 80px;
 
+  @include r($r-sm) {
+    margin-bottom: 50px;
+  }
+
   &__wrapper {
     background-color: #fff;
     border-radius: 3px;
     padding: 50px 36px 45px;
+
+    @include r($r-sm) {
+      padding: 30px 12px 45px;
+    }
   }
 
-  &__slider {}
+  &__title {
+    @include r($r-sm) {
+      margin-bottom: 25px;
+    }
+  }
 
-  .slick-list {
-    margin-left: 25px;
-    padding-left: 38px;
+  &__slider {
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .slick-track {
     padding: 15px 0;
+  }
+
+  .slick-slide {
+    max-width: 215px;
+    margin: 0 22px;
   }
 
   .slick-current {
@@ -37,17 +54,51 @@
     transition: background-color 0.4s linear;
 
     &--prev {
-      left: 0;
+      left: -65px;
       mask-image: url(../../images/icons/slider-arrow-left.svg);
     }
 
     &--next {
-      right: 0;
+      right: -60px;
       mask-image: url(../../images/icons/slider-arrow-rigth.svg);
     }
 
     &:hover {
       background-color: $c-orange;
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    li {
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+
+      button {
+        font-size: 0;
+        width: 8px;
+        height: 8px;
+        background-color: #8f8f8f;
+        border-radius: 50%;
+        outline: transparent;
+        border: 1px solid transparent;
+
+        &:focus {
+          border: 1px solid rgb(255, 234, 4);
+        }
+      }
+    }
+
+    .slick-active {
+      button {
+        background-color: $c-orange;
+      }
     }
   }
 
@@ -70,7 +121,6 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     margin: 0 auto;
-    // padding: 50px 30px 40px 87px;
     max-width: 1000px;
     position: relative;
 
@@ -93,6 +143,10 @@
     position: relative;
     padding: 50px 30px 40px 87px;
 
+    @include r($r-sm) {
+      padding: 65px 15px 40px 15px;
+    }
+
     .slick-dots {
       display: flex;
       justify-content: center;
@@ -100,6 +154,15 @@
       bottom: 35px;
       left: 22%;
       transform: translateX(-15%);
+
+      @include r($r-lg) {
+        bottom: 15px;
+        left: 50%;
+      }
+
+      @include r($r-sm) {
+        transform: translateX(-50%);
+      }
 
       li {
         &:not(:last-child) {
@@ -122,39 +185,65 @@
         }
       }
     }
-
   }
 
   &__info-item {
     display: flex !important;
     justify-content: space-between;
+
+    @include r($r-lg) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__info-img {
     object-fit: cover;
     margin-right: 60px;
+
+    @include r($r-lg) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &__info-descr {
     padding-right: 35px;
+
+    @include r($r-lg) {
+      padding-right: 0;
+      text-align: center;
+    }
   }
 
   &__info-box {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+
+    @include r($r-sm) {
+      display: block;
+    }
   }
 
   &__info-date {
     font-size: 14px;
     color: #9494a8;
     margin-right: 30px;
+
+    @include r($r-sm) {
+      margin: 0 0 10px;
+    }
   }
 
   &__info-location {
     position: relative;
     padding-left: 42px;
     font-weight: 700;
+
+    @include r($r-sm) {
+      font-size: 15px;
+    }
 
     &::before {
       @include pseudo;
@@ -171,12 +260,20 @@
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 15px;
+
+    @include r($r-sm) {
+      font-size: 20px;
+    }
   }
 
   &__info-block {
     font-weight: 700;
     color: #000000;
     margin-bottom: 15px;
+
+    @include r($r-sm) {
+      font-size: 14px;
+    }
   }
 
   &__info-work {
@@ -185,8 +282,8 @@
     color: #000000;
   }
 
-  &__calculation{
-    &::before{
+  &__calculation {
+    &::before {
       width: 29px;
       height: 19px;
       left: 11px;
@@ -194,12 +291,27 @@
     }
   }
 
+  &__measurements {
+    @include r($r-sm) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
 
+  &__info-map {
+    width: 100%;
 
-
+    @include r($r-sm) {
+      height: 260px;
+    }
+  }
 }
 
 #map {
   width: 100%;
   height: 310px;
+
+  @include r($r-sm) {
+    height: 260px;
+  }
 }

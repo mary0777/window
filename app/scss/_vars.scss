@@ -1,16 +1,16 @@
-@mixin pseudo($pos: absolute, $content: ''){
+@mixin pseudo($pos: absolute, $content: '') {
   content: $content;
   position: $pos;
 }
-
-// @include pseudo;
 
 @mixin line-clamp($lines: 1) {
   @if $lines <=1 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  } @else {
+  }
+
+  @else {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -19,7 +19,12 @@
   }
 }
 
-// @include line-clamp(3);
+
+@mixin r($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
 
 
 $c-default:#2f2f51;
@@ -27,3 +32,15 @@ $c-bg: #e5e5e5;
 $c-orange: #ef7f1a;
 $c-black: #000;
 $c-gray: #e2e2e2;
+
+
+$burgerWidth: 30px;
+$burgerHeight: 20px;
+$burgerLineHeight: 2px;
+$burgerColor: #000000;
+
+
+$r-sm: 576;
+$r-md: 768;
+$r-lg: 992;
+$r-xl: 1200;
