@@ -1,14 +1,24 @@
 .services {
   margin-bottom: 100px;
 
+  @include r($r-sm) {
+    margin-bottom: 40px;
+  }
+
   &__inner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+
+    @include r($r-lg) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__item {
     min-height: 260px;
+    max-width: 595px;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
@@ -16,6 +26,10 @@
     position: relative;
     z-index: 1;
     transition: box-shadow 0.4s linear;
+
+    @include r($r-lg) {
+      margin: 0 auto;
+    }
 
     &::before {
       @include pseudo;
@@ -53,6 +67,11 @@
   &__link {
     display: block;
     padding: 56px 30px 40px 50px;
+    outline: transparent;
+
+    @include r($r-sm) {
+      padding: 33px 15px 35px 19px;
+    }
   }
 
   &__title {
@@ -62,12 +81,14 @@
     margin-bottom: 40px;
     display: block;
 
+    @include r($r-sm) {
+      font-size: 17px;
+    }
 
     &::before {
       @include pseudo;
       width: 100%;
       height: 76px;
-
       left: 0;
       top: 50%;
       transform: translateY(-50%);
@@ -104,20 +125,31 @@
     max-width: 305px;
     color: $c-default;
     @include line-clamp(4);
+
+    @include r($r-lg) {
+      max-width: 100%;
+    }
+
+    @include r($r-sm) {
+      font-size: 14px;
+    }
   }
 
-  &__content{
+  &__content {
     background-color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     margin: 0 auto;
     padding: 40px 100px 40px 95px;
     max-width: 1000px;
-
     background-repeat: no-repeat;
     background-position: bottom right;
     position: relative;
     z-index: 1;
+
+    @include r($r-sm) {
+      padding: 60px 35px 35px 30px;
+    }
 
     &::before {
       @include pseudo;
@@ -149,6 +181,10 @@
     display: flex;
     justify-content: space-between;
 
+    @include r($r-md) {
+      flex-direction: column;
+    }
+
     .slick-dots {
       display: flex;
       justify-content: center;
@@ -168,6 +204,12 @@
           height: 8px;
           background-color: #fff;
           border-radius: 50%;
+          outline: transparent;
+          border: 1px solid transparent;
+
+          &:focus {
+            border: 1px solid rgb(255, 234, 4);
+          }
         }
       }
 
@@ -182,32 +224,62 @@
   &__slider {
     max-width: 307px;
     margin-bottom: 30px;
+    margin-right: 15px;
+
+    @include r($r-md) {
+      margin: 0 auto 20px;
+    }
+
+    @include r($r-sm) {
+      max-width: 100%;
+    }
   }
 
   &__img {
     max-width: 307px;
-  }
 
+    @include r($r-sm) {
+      height: 180px;
+    }
+  }
 
   &__order {
     padding-top: 15px;
     margin-right: 45px;
+
+    @include r($r-lg) {
+      padding-top: 0;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &__title--popup {
     padding-left: 0;
     max-width: 100%;
     margin-bottom: 20px;
+
+    @include r($r-lg) {
+      margin-bottom: 15px;
+    }
   }
 
   &__text--popup {
     margin-bottom: 20px;
   }
 
+  &__measurements-link {
+    margin-bottom: 10px;
+  }
+
   &__info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 35px;
+
+    @include r($r-md) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__info-item {
@@ -269,74 +341,4 @@
     font-size: 13px;
     color: $c-black;
   }
-
-
-  // .mfp-close {
-  //   width: 16px;
-  //   height: 16px;
-  //   line-height: 44px;
-  //   position: absolute;
-  //   right: 31px;
-  //   top:33px;
-
-  //   opacity: .65;
-  //   padding: 0 0 18px 10px;
-  //   color: #fff;
-
-  //   font-size: 0;
-  //   background-image: url(../../images/icons/close-black.svg);
-
-
-
-  // }
-
 }
-
-.container {}
-
-.title {}
-
-.mfp-hide {}
-
-.measurements-link {}
-
-.order-popup {
-
-  &__title {}
-
-  &__title--measurements {}
-
-  &__fieldset {}
-
-  &__list {}
-
-  &__item {}
-
-  &__label {}
-
-  &__input {}
-
-  &__link {}
-
-  &__btn {}
-
-  &__btn--measurements {}
-
-  &__title--calculation {}
-
-  &__link--calculation {}
-
-  &__btn--calculation {}
-}
-
-.order-popup--measurements {}
-
-.input-checkbox {}
-
-.label-checkbox {}
-
-.btn {}
-
-.calculation-link {}
-
-.order-popup--calculation {}

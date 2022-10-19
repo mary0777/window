@@ -1,0 +1,255 @@
+.header {
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+
+  &--fixed {
+    position: fixed;
+    border-bottom: 1px solid $c-default;
+    animation: slide-down 0.7s;
+
+    .menu {
+      padding: 3px 0;
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    100% {
+      opacity: 0.9;
+      transform: translateY(0);
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 0;
+
+  @include r($r-sm) {
+    padding: 5px 0;
+  }
+
+  &--active {
+
+    .menu__list {
+      transform: translateX(0);
+      overflow-y: scroll;
+    }
+
+    .menu__item {
+      padding: 10px 0;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+
+    .menu__link {
+      padding-top: 0;
+      display: block;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.3s linear, color 0.4s linear;
+
+      &::before {
+        width: 0;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $c-orange;
+      }
+    }
+
+    .burger--close {
+      display: block;
+      z-index: 5;
+      left: 42%;
+      position: absolute;
+
+      @include r($r-lg) {
+        left: 40%;
+      }
+
+      @include r($r-lg) {
+        left: 38%;
+      }
+
+      @include r($r-sm) {
+        left: 58%;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    @include r($r-xl) {
+      position: absolute;
+      background-color: #ffce86;
+      width: 50%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 100vh;
+      display: block;
+      padding: 115px 0 50px;
+      text-align: center;
+      transform: translateX(-200%);
+      z-index: 1;
+      transition: transform .3s linear;
+    }
+
+    @include r($r-sm) {
+      width: 80%;
+    }
+  }
+
+  &__item {
+    @include r($r-md) {
+      font-size: 14px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &--burger {
+      display: none;
+
+      @include r($r-sm) {
+        display: block;
+      }
+    }
+
+    .measurements-link {
+      @include r($r-sm) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: $c-black;
+    position: relative;
+    padding-top: 39px;
+    transition: color 0.4s linear;
+    outline: transparent;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: transparent;
+      top: 0;
+      transition: background-color 0.4s ease;
+    }
+
+    &:hover {
+      color: $c-orange;
+
+      &::before {
+        background-color: $c-orange;
+      }
+    }
+  }
+
+  &__buttons {
+    margin-left: auto;
+
+    @include r($r-sm) {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  margin-right: 45px;
+  outline: transparent;
+  z-index: 5;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: opacity 0.3s linear;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    border: 1px solid $c-orange;
+  }
+}
+
+.burger {
+  width: $burgerWidth;
+  height: $burgerHeight;
+  position: relative;
+  color: $burgerColor;
+  margin-left: 20px;
+  z-index: 5;
+  display: none;
+
+  &--open {
+    @include r($r-xl) {
+      display: block;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: $burgerLineHeight;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $burgerLineHeight;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - $burgerLineHeight);
+  }
+
+  &--active {
+    .burger__line {
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      top: 50%;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      top: 50%;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+  }
+}
