@@ -1,5 +1,16 @@
 .about {
+  margin-bottom: 87px;
+
+  @include r($r-md) {
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
   &__item {
+    border-radius: 3px;
     display: none;
 
     &--active {
@@ -7,37 +18,25 @@
     }
   }
 
-}
-
-
-.about {
-  margin-bottom: 87px;
-
-  &__tabs-link {}
-
-  &__tabs-link--active {}
-
-  &__content {}
-
-  &__item {
-    border-radius: 3px;
-  }
-
-  &__item--active {}
-
-  &__descr {}
-
   &__descr-box {
     background-color: #fff;
     border-radius: 3px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 64px;
+
+    @include r($r-md) {
+      flex-direction: column;
+    }
   }
 
   &__descr-info {
     padding: 39px 53px 10px;
     width: 100%;
+
+    @include r($r-sm) {
+      padding: 15px;
+    }
   }
 
   &__descr-logo {
@@ -52,15 +51,28 @@
     @include line-clamp(9);
   }
 
-  &__descr-popup {
+  &__descr-video {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     max-width: 595px;
     width: 100%;
     border-radius: 3px;
+
+    @include r($r-md) {
+      max-width: 100%;
+    }
+  }
+
+  &__descr-popup {
+    display: block;
+    min-height: 466px;
     position: relative;
     transition: all 0.5s linear;
+
+    @include r($r-sm) {
+      min-height: 300px;
+    }
 
     &::before {
       @include pseudo;
@@ -72,8 +84,13 @@
       background-image: url(../../images/about/play-popup.png);
       background-position: center center;
       background-size: cover;
-      transition: width 0.4s ease, height 0.4s ease;
+      transition: width 0.5s ease, height 0.5s ease;
       z-index: 1;
+
+      @include r($r-sm) {
+        width: 80px;
+        height: 90px;
+      }
     }
 
     &::after {
@@ -83,8 +100,8 @@
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: -1;
-      transition: all 0.5s ease;
+      opacity: 0;
+      transition: opacity 0.5s linear;
     }
 
     &:hover {
@@ -92,10 +109,15 @@
       &::before {
         width: 160px;
         height: 180px;
+
+        @include r($r-sm) {
+          width: 120px;
+          height: 140px;
+        }
       }
 
       &::after {
-        z-index: 0;
+        opacity: 1;
       }
     }
   }
@@ -107,6 +129,20 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 100px;
     column-gap: 20px;
+
+    @include r($r-xl) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 50px;
+    }
+
+    @include r($r-md) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include r($r-sm) {
+      margin-bottom: 40px;
+      padding: 0;
+    }
   }
 
   &__descr-item {
@@ -155,18 +191,25 @@
       width: 81px;
       height: 99px;
     }
-
   }
 
   &__descr-title {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 10px;
+
+    @include r($r-sm) {
+      font-size: 14px;
+    }
   }
 
   &__descr-note {
     color: #000000;
     @include line-clamp(3);
+
+    @include r($r-sm) {
+      font-size: 14px;
+    }
   }
 
   &__measurements {
@@ -178,14 +221,31 @@
     padding: 68px 60px;
     background-color: #fff;
 
+    @include r($r-md) {
+      padding: 30px 20px;
+    }
   }
 
   &__work-title {
     margin-bottom: 70px;
+
+    @include r($r-md) {
+      margin-bottom: 45px;
+    }
   }
 
   &__work-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @include r($r-lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include r($r-sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__work-item {
@@ -195,6 +255,10 @@
     max-width: 250px;
     font-size: 16px;
     line-height: 1.6;
+
+    @include r($r-lg) {
+      max-width: 100%;
+    }
 
     &::before {
       @include pseudo;
@@ -227,33 +291,240 @@
       width: 120px;
       background-image: url(../../images/about/work-4.svg);
     }
-
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
   }
 
   &__work-subtitle {
     font-weight: 700;
     text-transform: uppercase;
+
+    @include r($r-sm) {
+      font-size: 16px;
+    }
   }
 
   &__work-text {
     color: $c-black;
+
+    @include r($r-sm) {
+      font-size: 14px;
+    }
   }
 
-  &__reviews {}
+  &__reviews-slider {
+    padding: 55px 35px;
+    background-color: #fff;
 
-  &__reviews-slider {}
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
 
-  &__reviews-item {}
+      li {
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
+
+        button {
+          font-size: 0;
+          width: 8px;
+          height: 8px;
+          background-color: #8f8f8f;
+          border-radius: 50%;
+          outline: transparent;
+          border: 1px solid transparent;
+
+          &:focus {
+            border: 1px solid rgb(255, 234, 4);
+          }
+        }
+      }
+
+      .slick-active {
+        button {
+          background-color: $c-orange;
+        }
+      }
+    }
+  }
+
+  &__reviews-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+
+  &__reviews-name {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 60px 10px 0;
+
+    @include r($r-lg) {
+      margin-right: 40px;
+    }
+
+    @include r($r-sm) {
+      margin-right: 0;
+    }
+  }
+
+  &__reviews-contract {
+    font-size: 14px;
+    color: #8f8f8f;
+    line-height: 1;
+    margin: 0 15px 10px 0;
+
+    @include r($r-sm) {
+      margin-right: 0;
+    }
+  }
+
+  &__reviews-date {
+    margin-right: 15px;
+  }
+
+  &__reviews-link {
+    margin-left: auto;
+    font-weight: 700;
+    color: #fff;
+    background-color: $c-orange;
+    padding: 17px 28px 15px 64px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    position: relative;
+
+    @include r($r-md) {
+      margin-left: 0;
+    }
+
+    @include r($r-sm) {
+      padding: 15px 20px 15px 60px;
+      margin-bottom: 0;
+    }
+
+    &::before {
+      @include pseudo;
+      width: 25px;
+      height: 23px;
+      left: 20px;
+      background-image: url('../images/icons/reviews.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__reviews-text {
+    color: #434343;
+    max-width: 795px;
+    margin: 0 auto;
+    position: relative;
+
+    @include r($r-xl) {
+      max-width: 735px;
+    }
+
+    @include r($r-sm) {
+      font-size: 14px;
+    }
+
+    p:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    .slick-btn {
+      @include pseudo;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 48px;
+      background-color: $c-black;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      z-index: 2;
+      cursor: pointer;
+      transition: background-color 0.4s linear;
+
+      @include r($r-lg) {
+        display: none;
+      }
+
+      &--prev {
+        left: -70px;
+        mask-image: url(../../images/icons/slider-arrow-left.svg);
+      }
+
+      &--next {
+        right: -70px;
+        mask-image: url(../../images/icons/slider-arrow-rigth.svg);
+      }
+
+      &:hover {
+        background-color: $c-orange;
+      }
+    }
+  }
+
+  &__reviews-form {
+    background-color: #fff;
+
+    .mfp-close {
+      background-color: #000000;
+    }
+  }
+
+  &__reviews-title {
+    color: $c-default;
+    padding-left: 0;
+    display: block;
+    text-align: center;
+
+    @include r($r-sm) {
+      font-size: 20px;
+    }
+
+    &::before {
+      background-image: url('../images/icons/reviews-orange.svg');
+    }
+  }
+
+  &__reviews-input {
+    background-color: #e2e2e2;
+  }
+
+  &__reviews-checkbox {
+    color: #111e97;
+
+    &::before {
+      background-color: #e2e2e2;
+    }
+  }
+
+  &__reviews-btn {
+    background-color: $c-orange;
+    color: #fff;
+  }
 
   &__certificates {
-    padding: 95px 100px;
     background-color: #fff;
   }
 
   &__certificates-slider {
+    padding: 95px 100px;
+
+    @include r($r-sm) {
+      padding: 40px 30px;
+    }
+
+    .slick-slide {
+      margin-right: 10px;
+
+      @include r($r-xl) {
+        width: 191px !important;
+      }
+    }
 
     .slick-list {
       margin-left: 8px;
@@ -268,7 +539,7 @@
       filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
       transition: 0.4s ease;
     }
-  
+
     .slick__btn {
       @include pseudo;
       top: 50%;
@@ -281,76 +552,62 @@
       mask-size: contain;
       z-index: 2;
       transition: background-color 0.4s linear;
-  
+
       &--prev {
-        left: -40px;
+        left: 40px;
         mask-image: url(../../images/icons/slider-arrow-left.svg);
       }
-  
+
       &--next {
-        right: -40px;
+        right: 40px;
         mask-image: url(../../images/icons/slider-arrow-rigth.svg);
       }
-  
+
       &:hover {
         background-color: $c-orange;
       }
     }
-  }
 
-  &__certificates-boximg{
-    &:hover{
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
 
-      filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
-        transition: 0.4s ease;
+      li {
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
+
+        button {
+          font-size: 0;
+          width: 8px;
+          height: 8px;
+          background-color: #8f8f8f;
+          border-radius: 50%;
+          outline: transparent;
+          border: 1px solid transparent;
+
+          &:focus {
+            border: 1px solid rgb(255, 234, 4);
+          }
+        }
+      }
+
+      .slick-active {
+        button {
+          background-color: $c-orange;
+        }
+      }
     }
   }
 
-  &__certificates-img {
-   
+  &__certificates-boximg {
+    &:hover {
+      filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
+      transition: 0.4s ease;
+    }
   }
 }
-
-.container {}
-
-.title {}
-
-.tabs {
-
-  &__item {}
-}
-
-.measurements-link {}
-
-.mfp-hide {}
-
-.order-popup {
-
-  &__title {}
-
-  &__title--measurements {}
-
-  &__fieldset {}
-
-  &__list {}
-
-  &__item {}
-
-  &__label {}
-
-  &__input {}
-
-  &__link {}
-
-  &__btn {}
-
-  &__btn--measurements {}
-}
-
-.order-popup--measurements {}
-
-.input-checkbox {}
-
-.label-checkbox {}
-
-.btn {}

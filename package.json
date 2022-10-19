@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://mary0777.github.io/window/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d app"
   },
   "author": "Maryna Maksymenko",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.27.10",
     "del": "^6.1.1",
+    "gh-pages": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-concat": "^2.6.1",
@@ -19,9 +21,11 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.6.0",
-    "jquery-form-styler": "^2.0.2",
     "magnific-popup": "^1.1.0",
     "sass": "^1.52.3",
     "slick-carousel": "^1.8.1"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.31"
   }
 }

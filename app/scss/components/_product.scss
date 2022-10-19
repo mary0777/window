@@ -1,6 +1,13 @@
 .product {
   margin-bottom: 95px;
 
+  @include r($r-lg) {
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
 
   &__calculation-link {
     left: 50%;
@@ -17,6 +24,10 @@
   max-width: 1240px;
   margin: 0 auto;
   margin-bottom: 55px;
+
+  @include r($r-md) {
+    margin-bottom: 30px;
+  }
 
   &__item {
     display: block;
@@ -36,12 +47,43 @@
     justify-content: space-between;
     max-width: 1145px;
     margin: 0 auto;
+    max-height: 461px;
+
+    @include r($r-md) {
+      flex-direction: column;
+      max-height: max-content;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+
+    @include r($r-lg) {
+      width: 410px;
+      height: 330px;
+    }
+
+    @include r($r-md) {
+      width: 100%;
+    }
+
+    @include r($r-sm) {
+      height: auto;
+    }
   }
 
   &__content {
     padding: 72px 33px 52px 35px;
     background-color: #fff;
     width: 100%;
+
+    @include r($r-lg) {
+      padding: 15px;
+    }
+
+    @include r($r-md) {
+      padding: 15px 15px 35px;
+    }
   }
 
   &__title {
@@ -49,6 +91,16 @@
     font-size: 36px;
     margin-bottom: 40px;
     color: $c-orange;
+
+    @include r($r-lg) {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    @include r($r-sm) {
+      text-align: center;
+      font-size: 25px;
+    }
   }
 
   &__text {
@@ -57,6 +109,17 @@
     color: $c-black;
     margin-bottom: 30px;
     max-width: 390px;
+
+    @include r($r-lg) {
+      font-size: 16px;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    @include r($r-sm) {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
   }
 
   &__list {
@@ -69,9 +132,17 @@
   &__item {
     font-weight: 400;
     color: $c-black;
-
     border-bottom: 2px dotted #bababa;
     position: relative;
+
+    @include r($r-lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include r($r-sm) {
+      font-size: 14px;
+    }
   }
 
   &__name {
@@ -91,6 +162,10 @@
     width: 100%;
     font-weight: 700;
     color: $c-default;
+
+    @include r($r-lg) {
+      width: auto;
+    }
   }
 
   .slick__btn {
@@ -125,24 +200,77 @@
   .slick-disabled {
     background-color: #8f8f8f;
   }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    li {
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+
+      button {
+        font-size: 0;
+        width: 8px;
+        height: 8px;
+        background-color: #8f8f8f;
+        border-radius: 50%;
+        outline: transparent;
+        border: 1px solid transparent;
+
+        &:focus {
+          border: 1px solid rgb(255, 234, 4);
+        }
+      }
+    }
+
+    .slick-active {
+      button {
+        background-color: $c-orange;
+      }
+    }
+  }
 }
 
 .product-quality {
   margin-bottom: 55px;
+
+  @include r($r-lg) {
+    margin-bottom: 35px;
+  }
 
   &__inner {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     padding: 35px 45px 65px;
+
+    @include r($r-lg) {
+      padding: 35px;
+    }
   }
 
   &__logo {
+    width: auto;
+    height: auto;
     margin: 0 auto 55px;
+
+    @include r($r-lg) {
+      margin: 0 auto 25px;
+    }
   }
 
   &__list {
     display: flex;
+
+    @include r($r-lg) {
+      display: block;
+    }
   }
 
   &__item {
@@ -152,8 +280,17 @@
     text-align: center;
     width: -webkit-fill-available;
 
+    @include r($r-lg) {
+      padding-top: 110px;
+    }
+
     &:not(:last-child) {
       margin-right: 40px;
+
+      @include r($r-lg) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
     }
 
     &::before {
@@ -192,4 +329,3 @@
     }
   }
 }
-

@@ -1,17 +1,20 @@
 .contacts {
   padding-bottom: 40px;
 
-
   &__inner {
     display: flex;
     justify-content: space-around;
+
+    @include r($r-lg) {
+      flex-direction: column;
+    }
   }
 
   &__info {
     position: relative;
   }
 
-  &__img{
+  &__img {
     position: absolute;
     bottom: -40px;
     right: -90px;
@@ -20,32 +23,50 @@
     background-repeat: no-repeat;
     background-size: auto;
     z-index: 1;
+
+    @include r($r-xl) {
+      opacity: 0.2;
+    }
+
+    @include r($r-lg) {
+      display: none;
+    }
   }
 
   &__list {
     margin-bottom: 58px;
+
+    @include r($r-lg) {
+      margin-bottom: 30px;
+    }
   }
 
-  &__list-text{
+  &__list-text {
     font-weight: 700;
-font-size: 18px;
-margin-bottom: 20px;
-display: block;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: block;
   }
 
   &__item {
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-bottom: 25px;
     }
   }
 
   &__link {
+    display: flex;
+    flex-wrap: wrap;
     padding-left: 50px;
     position: relative;
     font-size: 18px;
-color: $c-black;
+    color: $c-black;
 
-    &::before{
+    @include r($r-sm) {
+      font-size: 16px;
+    }
+
+    &::before {
       @include pseudo;
       background-repeat: no-repeat;
       background-position: center;
@@ -55,22 +76,29 @@ color: $c-black;
       transform: translateY(-50%);
     }
 
-    &--phone{
+    &--phone {
       font-weight: 700;
       font-size: 22px;
       line-height: 1.6;
-      &::before{
+
+      @include r($r-sm) {
+        font-size: 16px;
+      }
+
+      &::before {
         background-image: url(../../images/icons/phone.svg);
         width: 25px;
         height: 27px;
       }
     }
-    &--address::before{
+
+    &--address::before {
       background-image: url(../../images/icons/location.svg);
       width: 20px;
       height: 26px;
     }
-    &--email::before{
+
+    &--email::before {
       background-image: url(../../images/icons/email.svg);
       width: 20px;
       height: 22px;
@@ -78,7 +106,7 @@ color: $c-black;
   }
 
   &__link-phone {
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: 50px;
     }
   }
@@ -86,89 +114,66 @@ color: $c-black;
   &__text {
     max-width: 230px;
     margin-bottom: 20px;
+
+    @include r($r-lg) {
+      max-width: 100%;
+    }
   }
 
   &__social {
-   
+    @include r($r-lg) {
+      margin-bottom: 20px;
+    }
   }
 
-  &__form{
-    max-width: 510px; 
+  &__form {
+    max-width: 510px;
     width: 100%;
     padding: 52px 57px 46px 60px;
     background-color: #fff;
     margin: 0;
-    // z-index: -1;
+
+    @include r($r-lg) {
+      margin: 0 auto;
+    }
+
+    @include r($r-sm) {
+      padding: 25px 20px 30px 20px;
+    }
   }
 
-  &__title{
+  &__title {
     padding-left: 0;
     color: $c-default;
   }
 
-  &__input,
-  &__textarea{
+  &__input {
     background-color: #e2e2e2;
   }
 
-  &__textarea{
-    resize: none;
-    min-height: 135px;
-    position: relative;
-    display: block;
-    overflow-y: scroll;
+  &__label-checkbox {
+    color: $c-default;
 
-    // &::-webkit-scrollbar {
-    //   width: 12px;             
-    // }
-
-    // &::-webkit-scrollbar-track {
-    //   background: orange;        /* цвет зоны отслеживания */
-    // }
-
-    // &::-webkit-scrollbar-button{
-    //     width: 16px;
-    //     height: 8px;
-    //     top: 0;
-    //     right: 14px;
-    //     background-image: url(../images/icons/text-area-top.svg);
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-       
-
-    // }
-
-    &::before{
-      @include pseudo;
-    width: 16px;
-    height: 8px;
-    top: 0;
-    right: 14px;
-    background-image: url(../images/icons/text-area-top.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    &::before {
+      background-color: #e2e2e2;
     }
   }
 
-  &__label-checkbox{
-    color: $c-default;
-&::before{
-background-color:#e2e2e2;
-}
-  }
-
-  &__btn{
+  &__btn {
     background-color: $c-default;
     color: #fff;
-  }
 
+    @include r($r-sm) {
+      padding: 15px 20px;
+    }
+  }
 }
 
 .social {
   display: flex;
 
   &__item {
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: 15px;
     }
   }
@@ -183,51 +188,8 @@ background-color:#e2e2e2;
     display: block;
     transition: background-color 0.4s linear;
 
-    &:hover{
+    &:hover {
       background-color: $c-default;
     }
   }
-}
-.order-popup {
-
-  &__title {
-  }
-
-  &__title--calculation {
-  }
-
-  &__fieldset {
-  }
-
-  &__list {
-  }
-
-  &__item {
-  }
-
-  &__label {
-  }
-
-  &__input {
-  }
-
-  &__link {
-  }
-
-  &__link--calculation {
-  }
-
-  &__btn {
-  }
-
-  &__btn--calculation {
-  }
-}
-.order-popup--calculation {
-}
-.input-checkbox {
-}
-.label-checkbox {
-}
-.btn {
 }

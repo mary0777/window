@@ -6,6 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ОкнаХаус | Главная страница</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00a300">
+  <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -21,112 +30,200 @@
             <img src="images/logo.png" alt="Логотип ОкнаХаус" width="90" height="63">
           </a>
 
+          <button class="burger burger--close" type="button">
+            <span class="burger__line"></span>
+            <span class="sr-only">Закрыть меню</span>
+          </button>
+
           <ul class="menu__list">
             <li class="menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link" href="#services">
                 Услуги
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link" href="#product">
                 Продукция
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link" href="#about">
                 О компании
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link" href="#portfolio">
                 Портфолио
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link" href="#question">
                 Вопрос-ответ
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link" href="#contacts">
                 Контакты
               </a>
             </li>
+
+            <li class="menu__item menu__item--burger">
+              <a class="measurements-link" href="#measurements-popup">
+                Заявка на замер
+              </a>
+              <form id="measurements-popup" class="mfp-hide order-popup order-popup--measurements">
+                <h2 class="order-popup__title order-popup__title--measurements">Вызвать замерщика на дом</h2>
+                <fieldset class="order-popup__fieldset">
+                  <ul class="order-popup__list">
+                    <li class="order-popup__item">
+                      <label class="order-popup__label" for="name"></label>
+                      <input class="order-popup__input" id="name" name="name" type="text" placeholder="Ваше имя"
+                        required="">
+                    </li>
+                    <li class="order-popup__item">
+                      <label class="order-popup__label" for="phone"></label>
+                      <input class="order-popup__input" id="phone" name="phone" type="tel" placeholder="Номер телефона"
+                        required="">
+                    </li>
+                    <li class="order-popup__item">
+                      <label class="order-popup__label" for="email"></label>
+                      <input class="order-popup__input" id="email" name="email" type="email" placeholder="E-mail"
+                        required="">
+                    </li>
+                    <li class="order-popup__item">
+                      <input class="input-checkbox" type="checkbox" id="checkbox">
+                      <label class="label-checkbox" for="checkbox">
+                        Я согласен(на) на обработку
+                        <a class="order-popup__link" href="#">персональных данных</a>
+                      </label>
+                    </li>
+                  </ul>
+                  <button class="btn order-popup__btn order-popup__btn--measurements">
+                    Отправить заявку
+                  </button>
+                </fieldset>
+              </form>
+            </li>
+
+            <li class="menu__item menu__item--burger">
+              <a class="calculation-link" href="#calculation-popup">
+                Заказать расчет
+              </a>
+
+              <form id="calculation-popup" class="mfp-hide order-popup order-popup--calculation">
+                <h2 class="order-popup__title order-popup__title--calculation">Заказать расчет</h2>
+                <fieldset class="order-popup__fieldset">
+                  <ul class="order-popup__list">
+                    <li class="order-popup__item">
+                      <label class="order-popup__label" for="name"></label>
+                      <input class="order-popup__input" id="name" name="name" type="text" placeholder="Ваше имя"
+                        required="">
+                    </li>
+                    <li class="order-popup__item">
+                      <label class="order-popup__label" for="phone"></label>
+                      <input class="order-popup__input" id="phone" name="phone" type="tel" placeholder="Номер телефона"
+                        required="">
+                    </li>
+                    <li class="order-popup__item">
+                      <label class="order-popup__label" for="email"></label>
+                      <input class="order-popup__input" id="email" name="email" type="email" placeholder="E-mail"
+                        required="">
+                    </li>
+                    <li class="order-popup__item">
+                      <input class="input-checkbox" type="checkbox" id="checkbox">
+                      <label class="label-checkbox" for="checkbox">
+                        Я согласен(на) на обработку
+                        <a class="order-popup__link order-popup__link--calculation" href="#">персональных данных</a>
+                      </label>
+                    </li>
+                  </ul>
+                  <button class="btn order-popup__btn order-popup__btn--calculation">
+                    Заказать расчет
+                  </button>
+                </fieldset>
+              </form>
+            </li>
           </ul>
 
-          <a class="measurements-link" href="#measurements-popup">
-            Заявка на замер
-          </a>
-          <form id="measurements-popup" class="mfp-hide order-popup order-popup--measurements">
-            <h2 class="order-popup__title order-popup__title--measurements">Вызвать замерщика на дом</h2>
-            <fieldset class="order-popup__fieldset">
-              <ul class="order-popup__list">
-                <li class="order-popup__item">
-                  <label class="order-popup__label" for="name"></label>
-                  <input class="order-popup__input" id="name" name="name" type="text" placeholder="Ваше имя"
-                    required="">
-                </li>
-                <li class="order-popup__item">
-                  <label class="order-popup__label" for="phone"></label>
-                  <input class="order-popup__input" id="phone" name="phone" type="tel" placeholder="Номер телефона"
-                    required="">
-                </li>
-                <li class="order-popup__item">
-                  <label class="order-popup__label" for="email"></label>
-                  <input class="order-popup__input" id="email" name="email" type="email" placeholder="E-mail"
-                    required="">
-                </li>
-                <li class="order-popup__item">
-                  <input class="input-checkbox" type="checkbox" id="checkbox">
-                  <label class="label-checkbox" for="checkbox">
-                    Я согласен(на) на обработку
-                    <a class="order-popup__link" href="#">персональных данных</a>
-                  </label>
-                </li>
-              </ul>
-              <button class="btn order-popup__btn order-popup__btn--measurements">
-                Отправить заявку
-              </button>
-            </fieldset>
-          </form>
+          <div class="menu__buttons">
+            <a class="measurements-link" href="#measurements-popup">
+              Заявка на замер
+            </a>
+            <form id="measurements-popup" class="mfp-hide order-popup order-popup--measurements">
+              <h2 class="order-popup__title order-popup__title--measurements">Вызвать замерщика на дом</h2>
+              <fieldset class="order-popup__fieldset">
+                <ul class="order-popup__list">
+                  <li class="order-popup__item">
+                    <label class="order-popup__label" for="name"></label>
+                    <input class="order-popup__input" id="name" name="name" type="text" placeholder="Ваше имя"
+                      required="">
+                  </li>
+                  <li class="order-popup__item">
+                    <label class="order-popup__label" for="phone"></label>
+                    <input class="order-popup__input" id="phone" name="phone" type="tel" placeholder="Номер телефона"
+                      required="">
+                  </li>
+                  <li class="order-popup__item">
+                    <label class="order-popup__label" for="email"></label>
+                    <input class="order-popup__input" id="email" name="email" type="email" placeholder="E-mail"
+                      required="">
+                  </li>
+                  <li class="order-popup__item">
+                    <input class="input-checkbox" type="checkbox" id="checkbox">
+                    <label class="label-checkbox" for="checkbox">
+                      Я согласен(на) на обработку
+                      <a class="order-popup__link" href="#">персональных данных</a>
+                    </label>
+                  </li>
+                </ul>
+                <button class="btn order-popup__btn order-popup__btn--measurements">
+                  Отправить заявку
+                </button>
+              </fieldset>
+            </form>
 
-          <a class="calculation-link" href="#calculation-popup">
-            Заказать расчет
-          </a>
+            <a class="calculation-link" href="#calculation-popup">
+              Заказать расчет
+            </a>
 
-          <form id="calculation-popup" class="mfp-hide order-popup order-popup--calculation">
-            <h2 class="order-popup__title order-popup__title--calculation">Заказать расчет</h2>
-            <fieldset class="order-popup__fieldset">
-              <ul class="order-popup__list">
-                <li class="order-popup__item">
-                  <label class="order-popup__label" for="name"></label>
-                  <input class="order-popup__input" id="name" name="name" type="text" placeholder="Ваше имя"
-                    required="">
-                </li>
-                <li class="order-popup__item">
-                  <label class="order-popup__label" for="phone"></label>
-                  <input class="order-popup__input" id="phone" name="phone" type="tel" placeholder="Номер телефона"
-                    required="">
-                </li>
-                <li class="order-popup__item">
-                  <label class="order-popup__label" for="email"></label>
-                  <input class="order-popup__input" id="email" name="email" type="email" placeholder="E-mail"
-                    required="">
-                </li>
-                <li class="order-popup__item">
-                  <input class="input-checkbox" type="checkbox" id="checkbox">
-                  <label class="label-checkbox" for="checkbox">
-                    Я согласен(на) на обработку
-                    <a class="order-popup__link order-popup__link--calculation" href="#">персональных данных</a>
-                  </label>
-                </li>
-              </ul>
-              <button class="btn order-popup__btn order-popup__btn--calculation">
-                Заказать расчет
-              </button>
-            </fieldset>
-          </form>
+            <form id="calculation-popup" class="mfp-hide order-popup order-popup--calculation">
+              <h2 class="order-popup__title order-popup__title--calculation">Заказать расчет</h2>
+              <fieldset class="order-popup__fieldset">
+                <ul class="order-popup__list">
+                  <li class="order-popup__item">
+                    <label class="order-popup__label" for="name"></label>
+                    <input class="order-popup__input" id="name" name="name" type="text" placeholder="Ваше имя"
+                      required="">
+                  </li>
+                  <li class="order-popup__item">
+                    <label class="order-popup__label" for="phone"></label>
+                    <input class="order-popup__input" id="phone" name="phone" type="tel" placeholder="Номер телефона"
+                      required="">
+                  </li>
+                  <li class="order-popup__item">
+                    <label class="order-popup__label" for="email"></label>
+                    <input class="order-popup__input" id="email" name="email" type="email" placeholder="E-mail"
+                      required="">
+                  </li>
+                  <li class="order-popup__item">
+                    <input class="input-checkbox" type="checkbox" id="checkbox">
+                    <label class="label-checkbox" for="checkbox">
+                      Я согласен(на) на обработку
+                      <a class="order-popup__link order-popup__link--calculation" href="#">персональных данных</a>
+                    </label>
+                  </li>
+                </ul>
+                <button class="btn order-popup__btn order-popup__btn--calculation">
+                  Заказать расчет
+                </button>
+              </fieldset>
+            </form>
+          </div>
 
+          <button class="burger burger--open" type="button">
+            <span class="burger__line"></span>
+            <span class="sr-only">Открыть меню</span>
+          </button>
         </nav>
       </div>
     </header>
@@ -202,7 +299,7 @@
         </div>
       </section>
 
-      <section class="services">
+      <section id="services" class="services">
         <div class="container">
           <h2 class="title">
             Наши услуги
@@ -247,7 +344,7 @@
                         Пластиковые окна Rehau от проверенного производителя с гарантией качества
                       </p>
                     </div>
-                    <a class="measurements-link" href="#measurements-popup">
+                    <a class="measurements-link services__measurements-link" href="#measurements-popup">
                       Заявка на замер
                     </a>
                     <form id="measurements-popup" class="mfp-hide order-popup order-popup--measurements">
@@ -439,7 +536,7 @@
                         объекты
                       </p>
                     </div>
-                    <a class="measurements-link" href="#measurements-popup">
+                    <a class="measurements-link services__measurements-link" href="#measurements-popup">
                       Заявка на замер
                     </a>
                     <form id="measurements-popup" class="mfp-hide order-popup order-popup--measurements">
@@ -628,7 +725,7 @@
                         и дач до террас и беседок. Выделяем личного технолога под каждый объект.
                       </p>
                     </div>
-                    <a class="measurements-link" href="#measurements-popup">
+                    <a class="measurements-link services__measurements-link" href="#measurements-popup">
                       Заявка на замер
                     </a>
                     <form id="measurements-popup" class="mfp-hide order-popup order-popup--measurements">
@@ -816,7 +913,7 @@
                         и офисов
                       </p>
                     </div>
-                    <a class="measurements-link" href="#measurements-popup">
+                    <a class="measurements-link services__measurements-link" href="#measurements-popup">
                       Заявка на замер
                     </a>
                     <form id="measurements-popup" class="mfp-hide order-popup order-popup--measurements">
@@ -966,9 +1063,9 @@
         </div>
       </section>
 
-      <section class="product">
+      <section id="product" class="product">
 
-        <h2 class="title">
+        <h2 class="title product__title">
           Продукция
         </h2>
         <div class="product-tabs">
@@ -1670,9 +1767,9 @@
         </div>
       </section>
 
-      <section class="about">
+      <section id="about" class="about">
         <div class="container">
-          <h2 class="title">
+          <h2 class="title about__title">
             О компании
           </h2>
           <ul class="tabs">
@@ -1715,10 +1812,10 @@
                     </p>
                   </div>
                 </div>
-
-                <a class="about__descr-popup mfp-iframe" href="http://www.youtube.com/watch?v=0O2aH4XLbto"
-                  style="background-image: url(images/about/popup-bg.jpg);"></a>
-
+                <div class="about__descr-video" style="background-image: url(images/about/popup-bg.jpg);">
+                  <a class="about__descr-popup" data-fancybox="#" href="https://youtu.be/WY8sDvZdWEA">
+                  </a>
+                </div>
               </div>
 
               <ul class="about__descr-list">
@@ -1863,9 +1960,241 @@
 
             <li id="reviews" class="about__item about__reviews">
               <div class="about__reviews-slider">
-                <div class="about__reviews-item"></div>
-                <div class="about__reviews-item"></div>
-                <div class="about__reviews-item"></div>
+                <div class="about__reviews-item">
+                  <div class="about__reviews-top">
+                    <div class="about__reviews-name">
+                      Раиса Михайлова 1
+                    </div>
+                    <div class="about__reviews-contract">
+                      <span class="about__reviews-date">
+                        24.06.2021
+                      </span>
+                      Договор №123456
+                    </div>
+                    <a class="about__reviews-link" href="#about-reviews1">
+                      Оставить отзыв
+                    </a>
+                    <form id="about-reviews1" class="mfp-hide order-popup about__reviews-form">
+                      <h2 class="order-popup__title about__reviews-title">Добавьте Ваш отзыв</h2>
+                      <fieldset class="order-popup__fieldset">
+                        <ul class="order-popup__list">
+                          <li class="order-popup__item">
+                            <label class="order-popup__label" for="name"></label>
+                            <input class="order-popup__input about__reviews-input" id="name" name="name" type="text"
+                              placeholder="Ваше имя" required="">
+                          </li>
+                          <li class="order-popup__item">
+                            <label class="order-popup__label" for="contract"></label>
+                            <input class="order-popup__input about__reviews-input" id="contract" name="contract"
+                              type="text" placeholder="Номер договора" required="">
+                          </li>
+                          <li class="order-popup__item">
+                            <label class="order-popup__label" for="email"></label>
+                            <input class="order-popup__input about__reviews-input" id="email" name="email" type="email"
+                              placeholder="E-mail" required="">
+                          </li>
+                          <li class="order-popup__item">
+                            <label class="order-popup__label label-textarea" for="text">
+                              <textarea class="order-popup__textarea" name="text" id="text" placeholder="Ваш отзыв"
+                                required=""></textarea>
+                            </label>
+                          </li>
+                          <li class="order-popup__item">
+                            <input class="input-checkbox" type="checkbox" id="reviews">
+                            <label class="label-checkbox about__reviews-checkbox" for="reviews">
+                              Я согласен(на) на обработку персональных данных
+                            </label>
+                          </li>
+                        </ul>
+                        <button class="btn order-popup__btn about__reviews-btn">
+                          Оставить отзыв
+                        </button>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <div class="about__reviews-text">
+                    <p>
+                      Огромное СПАСИБО всей команде Дизайн-Окно! В июне 2021 заказывала переостекление + отделка балкона
+                      первый раз и так все удачно - быстро, качественно. Все прошло отлично, в соответствии с условиями
+                      договора. Замерщик приехал как оговорено без опозданий, произвел замер лазерным уровнем, все
+                      подробно рассказал по профилю и комплектующим. Предоплата составила 20%, остаток - по факту.
+                      Соотношение цена/качество в сравнении с конкурентами. Доставка точно в срок, за 3 дня все
+                      установили. Итог - красивые окна. Будем зимой проверять на прочность :)
+                    </p>
+                    <p>
+                      Большая благодарность за отлично проведённую работу! Замерщик по вызову пришёл быстро, всё хорошо
+                      объяснил , окна пришли в соответствии со согласованной датой, поднятие в квартиру прошла очень
+                      хорошо , монтажники справились со своей работой на отлично! Все прошло в позитиве, соотношение
+                      цены и качества хорошее. Отличная команда! Спасибо!!!
+                    </p>
+                    <div class="slider-buttons">
+                      <div class="slick-btn slick-btn--prev"></div>
+                      <div class="slick-btn slick-btn--next"></div>
+                      <span class="sr-only">
+                        Нажмите для переключения слайда
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about__reviews-item">
+                  <div class="about__reviews-top">
+                    <div class="about__reviews-name">
+                      Раиса Михайлова 2
+                    </div>
+                    <div class="about__reviews-contract">
+                      <span class="about__reviews-date">
+                        24.06.2021
+                      </span>
+                      Договор №123456
+                    </div>
+                    <a class="about__reviews-link" href="#about-reviews2">
+                      Оставить отзыв
+                    </a>
+                    <form id="about-reviews2" class="mfp-hide order-popup about__reviews-form">
+                      <h2 class="order-popup__title about__reviews-title">Добавьте Ваш отзыв</h2>
+                      <fieldset class="order-popup__fieldset">
+                        <ul class="order-popup__list">
+                          <li class="order-popup__item">
+                            <label class="order-popup__label" for="name"></label>
+                            <input class="order-popup__input about__reviews-input" id="name" name="name" type="text"
+                              placeholder="Ваше имя" required="">
+                          </li>
+                          <li class="order-popup__item">
+                            <label class="order-popup__label" for="contract"></label>
+                            <input class="order-popup__input about__reviews-input" id="contract" name="contract"
+                              type="text" placeholder="Номер договора" required="">
+                          </li>
+                          <li class="order-popup__item">
+                            <label class="order-popup__label" for="email"></label>
+                            <input class="order-popup__input about__reviews-input" id="email" name="email" type="email"
+                              placeholder="E-mail" required="">
+                          </li>
+                          <li class="order-popup__item">
+                            <label class="order-popup__label label-textarea" for="text">
+                              <textarea class="order-popup__textarea" name="text" id="text" placeholder="Ваш отзыв"
+                                required=""></textarea>
+                            </label>
+                          </li>
+                          <li class="order-popup__item">
+                            <input class="input-checkbox" type="checkbox" id="reviews">
+                            <label class="label-checkbox about__reviews-checkbox" for="reviews">
+                              Я согласен(на) на обработку персональных данных
+                            </label>
+                          </li>
+                        </ul>
+                        <button class="btn order-popup__btn about__reviews-btn">
+                          Оставить отзыв
+                        </button>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <div class="about__reviews-text">
+                    <p>
+                      Огромное СПАСИБО всей команде Дизайн-Окно! В июне 2021 заказывала переостекление + отделка балкона
+                      первый раз и так все удачно - быстро, качественно. Все прошло отлично, в соответствии с условиями
+                      договора. Замерщик приехал как оговорено без опозданий, произвел замер лазерным уровнем, все
+                      подробно рассказал по профилю и комплектующим. Предоплата составила 20%, остаток - по факту.
+                      Соотношение цена/качество в сравнении с конкурентами. Доставка точно в срок, за 3 дня все
+                      установили. Итог - красивые окна. Будем зимой проверять на прочность :)
+                    </p>
+                    <p>
+                      Большая благодарность за отлично проведённую работу! Замерщик по вызову пришёл быстро, всё хорошо
+                      объяснил , окна пришли в соответствии со согласованной датой, поднятие в квартиру прошла очень
+                      хорошо , монтажники справились со своей работой на отлично! Все прошло в позитиве, соотношение
+                      цены и качества хорошее. Отличная команда! Спасибо!!!
+                    </p>
+                    <div class="slider-buttons">
+                      <div class="slick-btn slick-btn--prev"></div>
+                      <div class="slick-btn slick-btn--next"></div>
+                      <span class="sr-only">
+                        Нажмите для переключения слайда
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about__reviews-item">
+                  <div class="about__reviews-top">
+                    <div class="about__reviews-name">
+                      Раиса Михайлова 3
+                    </div>
+                    <div class="about__reviews-contract">
+                      <span class="about__reviews-date">
+                        24.06.2021
+                      </span>
+                      Договор №123456
+                    </div>
+                    <a class="about__reviews-link" href="#about-reviews3">
+                      Оставить отзыв
+                    </a>
+                    <form id="about-reviews3" class="mfp-hide order-popup about__reviews-form">
+                      <h2 class="order-popup__title about__reviews-title">Добавьте Ваш отзыв</h2>
+                      <fieldset class="order-popup__fieldset">
+                        <ul class="order-popup__list">
+                          <li class="order-popup__item">
+                            <label class="order-popup__label" for="name"></label>
+                            <input class="order-popup__input about__reviews-input" id="name" name="name" type="text"
+                              placeholder="Ваше имя" required="">
+                          </li>
+                          <li class="order-popup__item">
+                            <label class="order-popup__label" for="contract"></label>
+                            <input class="order-popup__input about__reviews-input" id="contract" name="contract"
+                              type="text" placeholder="Номер договора" required="">
+                          </li>
+                          <li class="order-popup__item">
+                            <label class="order-popup__label" for="email"></label>
+                            <input class="order-popup__input about__reviews-input" id="email" name="email" type="email"
+                              placeholder="E-mail" required="">
+                          </li>
+                          <li class="order-popup__item">
+                            <label class="order-popup__label label-textarea" for="text">
+                              <textarea class="order-popup__textarea" name="text" id="text" placeholder="Ваш отзыв"
+                                required=""></textarea>
+                            </label>
+                          </li>
+                          <li class="order-popup__item">
+                            <input class="input-checkbox" type="checkbox" id="reviews3">
+                            <label class="label-checkbox about__reviews-checkbox" for="reviews3">
+                              Я согласен(на) на обработку персональных данных
+                            </label>
+                          </li>
+                        </ul>
+                        <button class="btn order-popup__btn about__reviews-btn">
+                          Оставить отзыв
+                        </button>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <div class="about__reviews-text">
+                    <p>
+                      Огромное СПАСИБО всей команде Дизайн-Окно! В июне 2021 заказывала переостекление + отделка
+                      балкона
+                      первый раз и так все удачно - быстро, качественно. Все прошло отлично, в соответствии с
+                      условиями
+                      договора. Замерщик приехал как оговорено без опозданий, произвел замер лазерным уровнем, все
+                      подробно рассказал по профилю и комплектующим. Предоплата составила 20%, остаток - по факту.
+                      Соотношение цена/качество в сравнении с конкурентами. Доставка точно в срок, за 3 дня все
+                      установили. Итог - красивые окна. Будем зимой проверять на прочность :)
+                    </p>
+                    <p>
+                      Большая благодарность за отлично проведённую работу! Замерщик по вызову пришёл быстро, всё
+                      хорошо
+                      объяснил , окна пришли в соответствии со согласованной датой, поднятие в квартиру прошла очень
+                      хорошо , монтажники справились со своей работой на отлично! Все прошло в позитиве, соотношение
+                      цены и качества хорошее. Отличная команда! Спасибо!!!
+                    </p>
+
+                    <div class="slider-buttons">
+                      <div class="slick-btn slick-btn--prev"></div>
+                      <div class="slick-btn slick-btn--next"></div>
+                      <span class="sr-only">
+                        Нажмите для переключения слайда
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </li>
 
@@ -1875,33 +2204,22 @@
                   <img class="about__certificates-img" src="images/about/sertification-1.jpg" alt="Сертификат"
                     width="191" height="268">
                 </div>
-
-
                 <div class="about__certificates-boximg">
                   <img class="about__certificates-img" src="images/about/sertification-2.jpg" alt="Сертификат"
                     width="191" height="268">
                 </div>
-
-
                 <div class="about__certificates-boximg">
                   <img class="about__certificates-img" src="images/about/sertification-3.jpg" alt="Сертификат"
                     width="191" height="268">
                 </div>
-
-
                 <div class="about__certificates-boximg">
                   <img class="about__certificates-img" src="images/about/sertification-4.jpg" alt="Сертификат"
                     width="191" height="268">
                 </div>
-
-
                 <div class="about__certificates-boximg">
                   <img class="about__certificates-img" src="images/about/sertification-5.jpg" alt="Сертификат"
                     width="191" height="268">
                 </div>
-
-
-
               </div>
             </li>
 
@@ -1909,10 +2227,10 @@
         </div>
       </section>
 
-      <section class="portfolio">
+      <section id="portfolio" class="portfolio">
         <div class="container">
           <div class="portfolio__wrapper">
-            <h2 class="title">
+            <h2 class="title portfolio__title">
               Портфолио
             </h2>
             <div class="portfolio__slider">
@@ -1952,7 +2270,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -2058,7 +2376,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -2164,7 +2482,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -2270,7 +2588,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -2376,7 +2694,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -2452,11 +2770,12 @@
                         </form>
                       </div>
                     </div>
-
-
 
                   </div>
-                  <!-- <div id="map"></div> -->
+                  <iframe class="portfolio__info-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7186.646761913658!2d30.51248629814636!3d50.443646307710125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef8a358548f%3A0x3ebc1d062d601ba0!2z0LHRg9C7LiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQviwgNiwg0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2snl!4v1664735117999!5m2!1sru!2snl"
+                    width="1000" height="310" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
 
@@ -2496,7 +2815,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -2602,7 +2921,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -2708,7 +3027,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -2814,7 +3133,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -2920,7 +3239,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -3000,7 +3319,10 @@
 
 
                   </div>
-                  <!-- <div id="map"></div> -->
+                  <iframe class="portfolio__info-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7186.646761913658!2d30.51248629814636!3d50.443646307710125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef8a358548f%3A0x3ebc1d062d601ba0!2z0LHRg9C7LiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQviwgNiwg0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2snl!4v1664735117999!5m2!1sru!2snl"
+                    width="1000" height="310" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
 
@@ -3040,7 +3362,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -3146,7 +3468,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -3252,7 +3574,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -3358,7 +3680,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -3464,7 +3786,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -3544,7 +3866,10 @@
 
 
                   </div>
-                  <!-- <div id="map"></div> -->
+                  <iframe class="portfolio__info-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7186.646761913658!2d30.51248629814636!3d50.443646307710125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef8a358548f%3A0x3ebc1d062d601ba0!2z0LHRg9C7LiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQviwgNiwg0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2snl!4v1664735117999!5m2!1sru!2snl"
+                    width="1000" height="310" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
 
@@ -3584,7 +3909,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -3690,7 +4015,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -3796,7 +4121,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -3902,7 +4227,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4008,7 +4333,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4084,11 +4409,11 @@
                         </form>
                       </div>
                     </div>
-
-
-
                   </div>
-                  <!-- <div id="map"></div> -->
+                  <iframe class="portfolio__info-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7186.646761913658!2d30.51248629814636!3d50.443646307710125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef8a358548f%3A0x3ebc1d062d601ba0!2z0LHRg9C7LiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQviwgNiwg0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2snl!4v1664735117999!5m2!1sru!2snl"
+                    width="1000" height="310" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
 
@@ -4128,7 +4453,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4234,7 +4559,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4340,7 +4665,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4446,7 +4771,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4552,7 +4877,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4628,11 +4953,11 @@
                         </form>
                       </div>
                     </div>
-
-
-
                   </div>
-                  <!-- <div id="map"></div> -->
+                  <iframe class="portfolio__info-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7186.646761913658!2d30.51248629814636!3d50.443646307710125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef8a358548f%3A0x3ebc1d062d601ba0!2z0LHRg9C7LiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQviwgNiwg0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2snl!4v1664735117999!5m2!1sru!2snl"
+                    width="1000" height="310" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
 
@@ -4672,7 +4997,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4778,7 +5103,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4884,7 +5209,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -4990,7 +5315,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -5096,7 +5421,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -5172,11 +5497,11 @@
                         </form>
                       </div>
                     </div>
-
-
-
                   </div>
-                  <!-- <div id="map"></div> -->
+                  <iframe class="portfolio__info-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7186.646761913658!2d30.51248629814636!3d50.443646307710125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef8a358548f%3A0x3ebc1d062d601ba0!2z0LHRg9C7LiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQviwgNiwg0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2snl!4v1664735117999!5m2!1sru!2snl"
+                    width="1000" height="310" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
 
@@ -5216,7 +5541,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -5322,7 +5647,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -5428,7 +5753,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -5534,7 +5859,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -5640,7 +5965,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -5716,11 +6041,11 @@
                         </form>
                       </div>
                     </div>
-
-
-
                   </div>
-                  <!-- <div id="map"></div> -->
+                  <iframe class="portfolio__info-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7186.646761913658!2d30.51248629814636!3d50.443646307710125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef8a358548f%3A0x3ebc1d062d601ba0!2z0LHRg9C7LiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQviwgNiwg0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2snl!4v1664735117999!5m2!1sru!2snl"
+                    width="1000" height="310" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
 
@@ -5760,7 +6085,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -5866,7 +6191,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -5972,7 +6297,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -6078,7 +6403,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -6184,7 +6509,7 @@
                             </span>
                           </li>
                         </ul>
-                        <a class="measurements-link" href="#portfolio-measurements">
+                        <a class="measurements-link portfolio__measurements" href="#portfolio-measurements">
                           Заявка на замер
                         </a>
                         <form id="portfolio-measurements" class="mfp-hide order-popup order-popup--measurements">
@@ -6260,23 +6585,20 @@
                         </form>
                       </div>
                     </div>
-
-
-
                   </div>
-                  <!-- <div id="map"></div> -->
+                  <iframe class="portfolio__info-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7186.646761913658!2d30.51248629814636!3d50.443646307710125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef8a358548f%3A0x3ebc1d062d601ba0!2z0LHRg9C7LiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQviwgNiwg0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2snl!4v1664735117999!5m2!1sru!2snl"
+                    width="1000" height="310" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
-
-
-
             </div>
           </div>
           <div id="map"></div>
         </div>
       </section>
 
-      <section class="question">
+      <section id="question" class="question">
         <div class="container">
           <div class="question__wrapper">
             <h2 class="title question__title">
@@ -6364,7 +6686,7 @@
         </div>
       </section>
 
-      <section class="contacts">
+      <section id="contacts" class="contacts">
         <div class="container">
           <h2 class="title">
             Контакты
@@ -6447,9 +6769,10 @@
                       placeholder="E-mail" required="">
                   </li>
                   <li class="order-popup__item">
-                    <label class="order-popup__label" for="email"></label>
-                    <textarea class="order-popup__textarea contacts__textarea" name="text" id="text"
-                      placeholder="Ваш отзыв" required=""></textarea>
+                    <label class="order-popup__label label-textarea" for="text">
+                      <textarea class="order-popup__textarea" name="text" id="text" placeholder="Ваш отзыв"
+                        required=""></textarea>
+                    </label>
                   </li>
                   <li class="order-popup__item">
                     <input class="input-checkbox" type="checkbox" id="question">
@@ -6467,7 +6790,6 @@
           </div>
         </div>
       </section>
-
 
     </main>
 
