@@ -86,20 +86,20 @@
       }
 
       &::before {
-        background-image: url(../../images/icons/phone.svg);
+        background-image: url(../images/icons/phone.svg);
         width: 25px;
         height: 27px;
       }
     }
 
     &--address::before {
-      background-image: url(../../images/icons/location.svg);
+      background-image: url(../images/icons/location.svg);
       width: 20px;
       height: 26px;
     }
 
     &--email::before {
-      background-image: url(../../images/icons/email.svg);
+      background-image: url(../images/icons/email.svg);
       width: 20px;
       height: 22px;
     }

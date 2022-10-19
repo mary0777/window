@@ -81,7 +81,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-image: url(../../images/about/play-popup.png);
+      background-image: url('../images/about/play-popup.png');
       background-position: center center;
       background-size: cover;
       transition: width 0.5s ease, height 0.5s ease;
@@ -161,33 +161,33 @@
     }
 
     &--professionalism::before {
-      background-image: url(../../images/about/descr-1.svg);
+      background-image: url(../images/about/descr-1.svg);
       width: 90px;
     }
 
     &--price::before {
-      background-image: url(../../images/about/descr-2.svg);
+      background-image: url(../images/about/descr-2.svg);
       width: 115px;
     }
 
     &--mobility::before {
-      background-image: url(../../images/about/descr-3.svg);
+      background-image: url(../images/about/descr-3.svg);
       width: 83px;
       height: 94px;
     }
 
     &--loyalty::before {
-      background-image: url(../../images/about/descr-4.svg);
+      background-image: url(../images/about/descr-4.svg);
       width: 88px;
     }
 
     &--speed::before {
-      background-image: url(../../images/about/descr-5.svg);
+      background-image: url(../images/about/descr-5.svg);
       width: 82px;
     }
 
     &--quality::before {
-      background-image: url(../../images/about/descr-6.svg);
+      background-image: url(../images/about/descr-6.svg);
       width: 81px;
       height: 99px;
     }
@@ -273,23 +273,23 @@
 
     &--free::before {
       width: 100px;
-      background-image: url(../../images/about/work-1.svg);
+      background-image: url(../images/about/work-1.svg);
     }
 
     &--daily::before {
       width: 90px;
-      background-image: url(../../images/about/work-2.svg);
+      background-image: url(../images/about/work-2.svg);
     }
 
     &--sample::before {
       width: 100px;
       height: 74px;
-      background-image: url(../../images/about/work-3.svg);
+      background-image: url(../images/about/work-3.svg);
     }
 
     &--price::before {
       width: 120px;
-      background-image: url(../../images/about/work-4.svg);
+      background-image: url(../images/about/work-4.svg);
     }
   }
 
@@ -453,12 +453,12 @@
 
       &--prev {
         left: -70px;
-        mask-image: url(../../images/icons/slider-arrow-left.svg);
+        mask-image: url(../images/icons/slider-arrow-left.svg);
       }
 
       &--next {
         right: -70px;
-        mask-image: url(../../images/icons/slider-arrow-rigth.svg);
+        mask-image: url(../images/icons/slider-arrow-rigth.svg);
       }
 
       &:hover {
@@ -555,12 +555,12 @@
 
       &--prev {
         left: 40px;
-        mask-image: url(../../images/icons/slider-arrow-left.svg);
+        mask-image: url(../images/icons/slider-arrow-left.svg);
       }
 
       &--next {
         right: 40px;
-        mask-image: url(../../images/icons/slider-arrow-rigth.svg);
+        mask-image: url(../images/icons/slider-arrow-rigth.svg);
       }
 
       &:hover {

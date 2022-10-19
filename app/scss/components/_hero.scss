@@ -119,19 +119,19 @@
 
     &--window {
       &::before {
-        background-image: url(../../images/icons/window.svg);
+        background-image: url('../images/icons/window.svg');
       }
     }
 
     &--problems {
       &::before {
-        background-image: url(../../images/icons/fix-problem.svg);
+        background-image: url('../images/icons/fix-problem.svg');
       }
     }
 
     &--garant {
       &::before {
-        background-image: url(../../images/icons/garant.svg);
+        background-image: url('../images/icons/garant.svg');
       }
     }
   }
@@ -146,7 +146,7 @@
       width: 607px;
       height: 117px;
       z-index: 1;
-      background-image: url(../../images/measure.png);
+      background-image: url('../images/measure.png');
 
       @include r($r-sm) {
         display: none;
@@ -228,7 +228,7 @@
       height: 21px;
       left: 6px;
       top: 30%;
-      background-image: url(../../images/icons/markup-big.svg);
+      background-image: url('../images/icons/markup-big.svg');
     }
 
     &::before {

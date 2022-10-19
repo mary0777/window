@@ -55,12 +55,12 @@
 
     &--prev {
       left: -65px;
-      mask-image: url(../../images/icons/slider-arrow-left.svg);
+      mask-image: url(../images/icons/slider-arrow-left.svg);
     }
 
     &--next {
       right: -60px;
-      mask-image: url(../../images/icons/slider-arrow-rigth.svg);
+      mask-image: url(../images/icons/slider-arrow-rigth.svg);
     }
 
     &:hover {
@@ -259,7 +259,7 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      background-image: url(../../images/icons/geo-icon.svg);
+      background-image: url(../images/icons/geo-icon.svg);
     }
   }
 
@@ -294,7 +294,7 @@
       width: 29px;
       height: 19px;
       left: 11px;
-      background-image: url(../../images/icons/price.svg);
+      background-image: url(../images/icons/price.svg);
     }
   }
 
