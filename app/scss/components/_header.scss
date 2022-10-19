@@ -1,5 +1,30 @@
 .header {
   background-color: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+
+  &--fixed {
+    position: fixed;
+    border-bottom: 1px solid $c-default;
+    animation: slide-down 0.7s;
+
+    .menu {
+      padding: 3px 0;
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    100% {
+      opacity: 0.9;
+      transform: translateY(0);
+    }
+  }
 }
 
 .menu {

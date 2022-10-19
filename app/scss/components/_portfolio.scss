@@ -104,6 +104,13 @@
 
   &__link {
     display: block;
+    outline: transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+
+    &:focus {
+      border: 1px solid $c-orange;
+    }
   }
 
   &__img {

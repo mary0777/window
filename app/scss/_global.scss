@@ -17,6 +17,7 @@ body {
 
 .main {
   flex: 1 1 auto;
+  padding-top: 99px;
 }
 
 .sr-only {
@@ -38,10 +39,10 @@ body {
   margin: 0 auto;
 }
 
-
 .lock {
   overflow: hidden;
   position: relative;
+  height: auto;
 
   &::after {
     content: '';
@@ -362,6 +363,10 @@ body {
     overflow-y: scroll;
     outline: transparent;
     border: transparent;
+
+    @include r($r-sm) {
+      max-width: 100%;
+    }
 
     &::placeholder {
       color: #424268;

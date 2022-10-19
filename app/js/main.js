@@ -27,18 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-$(document).ready(function(){
-      $(".menu__link").on("click", function (event) {
-          event.preventDefault();
-          var id  = $(this).attr('href'),
-              top = $(id).offset().top - 50;
-        $('body,html').animate({ scrollTop: top }, 1500);
-        $('.burger--close').removeClass('burger--active');
-        $('.menu').removeClass('menu--active');
-        $('body').removeClass('lock');
-      });
+$(document).ready(function () {
+  $(".menu__link").on("click", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+      top = $(id).offset().top - 100;
+    $('body,html').animate({
+      scrollTop: top
+    }, 1500);
+    $('.burger--close').removeClass('burger--active');
+    $('.menu').removeClass('menu--active');
+    $('body').removeClass('lock');
   });
-  
+});
+
+$(window).scroll(function () {
+  var scroll = $(window).scrollTop();
+  if (scroll >= 500) {
+    $('.header').addClass('header--fixed');
+  } else {
+    $('.header').removeClass('header--fixed');
+  }
+});
+
 
 $(function () {
 
@@ -58,7 +69,6 @@ $(function () {
     }
   });
 });
-
 
 var serviceSlick = $('.services__slider').slick({
   dots: true,
@@ -93,15 +103,13 @@ $(function () {
     infinite: false,
     prevArrow: '<button type="button" class="slick__btn slick__btn--prev"></button>',
     nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>',
-    responsive: [
-      {
-        breakpoint: 993,
-        settings: {
-          arrows: false,
-         dots: true
-        }
+    responsive: [{
+      breakpoint: 993,
+      settings: {
+        arrows: false,
+        dots: true
       }
-    ]
+    }]
   });
 });
 
@@ -110,46 +118,48 @@ $(function () {
     $(this).next().slideToggle();
     $(this).toggleClass('question__question--active');
   });
+});
 
+
+
+$(function () {
   $('.portfolio__slider').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: '<button type="button" class="slick__btn slick__btn--prev"></button>',
     nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>',
-    responsive: [
-      {
-        breakpoint: 1201,
-        settings: {
-          slidesToShow: 3,
-          centerMode: true,
-          variableWidth: true,
-          arrows: false,
-         dots: true
-        }
+    responsive: [{
+      breakpoint: 1201,
+      settings: {
+        slidesToShow: 3,
+        centerMode: true,
+        variableWidth: true,
+        arrows: false,
+        dots: true
       }
-    ]
+    }]
   });
-  // $('.portfolio__slider').magnificPopup({
-  //   delegate: '.portfolio__link'
-  // });
-});
+
+  var portfolioSlick = $('.portfolio__info-slider').slick({
+    dots: true,
+    arrows: false,
+    fade: true
+  });
 
 
-var portfolioSlick = $('.portfolio__info-slider').slick({
-  dots: true,
-  arrows: false,
-  fade: true
-});
-
-$(function () {
-  $('.portfolio__link').magnificPopup({
+  $('.portfolio__slider').magnificPopup({
+    delegate: '.portfolio__link',
     type: 'inline',
 
     callbacks: {
       open: function () {
-        portfolioSlick.slick("reinit");
+        portfolioSlick.slick("refresh");
       },
     }
+  });
+
+  portfolioSlick.magnificPopup({
+    delegate: '.portfolio__measurements, .portfolio__calculation'
   });
 });
 
@@ -168,24 +178,22 @@ $(function () {
   });
 });
 
-$(function () {  
+$(function () {
   $('.about__reviews-slider').slick({
     fade: true,
     arrows: false,
-    responsive: [
-      {
-        breakpoint: 993,
-        settings: {
-          dots: true
-        }
+    responsive: [{
+      breakpoint: 993,
+      settings: {
+        dots: true
       }
-    ]
+    }]
   });
-   
+
   $(document).on('click', '.slick-btn--next', function () {
     $('.about__reviews-slider').slick('slickNext');
   });
-  
+
   $(document).on('click', '.slick-btn--prev', function () {
     $('.about__reviews-slider').slick('slickPrev');
   });
@@ -193,19 +201,18 @@ $(function () {
   $('.about__reviews-slider').magnificPopup({
     delegate: '.about__reviews-link',
     type: 'inline'
-    });
+  });
 });
 
 
-$(function () {  
+$(function () {
   $('.about__certificates-slider').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     infinite: true,
     prevArrow: '<button type="button" class="slick__btn slick__btn--prev"></button>',
     nextArrow: '<button type="button" class="slick__btn slick__btn--next"></button>',
-    responsive: [
-      {
+    responsive: [{
         breakpoint: 1201,
         settings: {
           slidesToShow: 3,
@@ -236,10 +243,9 @@ $(function () {
           centerMode: true,
           variableWidth: true,
           arrows: false,
-         dots: true
+          dots: true
         }
       }
     ]
   });
 });
-
