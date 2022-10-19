@@ -83,7 +83,7 @@ body {
     display: block;
     width: 14px;
     height: 14px;
-    background-image: url(../images/icons/markup.svg);
+    background-image: url('../images/icons/markup.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -212,7 +212,7 @@ body {
   transition: background-color 0.3s linear, border 0.3s linear;
 
   &::before {
-    background-image: url(../images/icons/measurements.svg);
+    background-image: url('../images/icons/measurements.svg');
   }
 
   &:hover {
@@ -233,7 +233,7 @@ body {
   transition: background-color 0.3s linear, border 0.3s linear;
 
   &::before {
-    background-image: url(../images/icons/calculation.svg);
+    background-image: url('../images/icons/calculation.svg');
   }
 
   &:hover {
@@ -302,14 +302,14 @@ body {
 
     &--measurements {
       &::before {
-        background-image: url(../images/icons/measurements.svg);
+        background-image: url('../images/icons/measurements.svg');
 
       }
     }
 
     &--calculation {
       &::before {
-        background-image: url(../images/icons/calculation.svg);
+        background-image: url('../images/icons/calculation.svg');
       }
     }
   }
@@ -380,17 +380,17 @@ body {
     &::-webkit-scrollbar-button:vertical:end:increment {
       width: 16px;
       height: 8px;
-      background-image: url(../images/icons/text-area-bottom.svg);
+      background-image: url('../images/icons/text-area-bottom.svg');
       background-repeat: no-repeat;
       background-size: cover;
     }
 
     &::-webkit-scrollbar-button:vertical:start:decrement {
-      background-image: url(../images/icons/text-area-top.svg);
+      background-image: url('../images/icons/text-area-top.svg');
     }
 
     &::-webkit-scrollbar-button:vertical:end:increment {
-      background-image: url(../images/icons/text-area-bottom.svg);
+      background-image: url('../images/icons/text-area-bottom.svg');
     }
   }
 
@@ -428,7 +428,7 @@ body {
     height: 21px;
     opacity: 1;
     font-size: 0;
-    mask-image: url(../images/sprite.svg#close-icon);
+    mask-image: url('../images/sprite.svg#close-icon');
     mask-repeat: no-repeat;
     mask-size: contain;
   }

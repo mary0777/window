@@ -48,7 +48,7 @@
       right: 30px;
       bottom: 22px;
       background-color: #fff;
-      mask-image: url(../../images/sprite.svg#arrow-right);
+      mask-image: url(../images/sprite.svg#arrow-right);
       mask-position: center;
       mask-size: cover;
       transition: background-color 0.4s linear;
@@ -98,25 +98,25 @@
 
     &--window {
       &::before {
-        background-image: url(../../images/services/icon-1.svg);
+        background-image: url(../images/services/icon-1.svg);
       }
     }
 
     &--balcony {
       &::before {
-        background-image: url(../../images/services/icon-2.svg);
+        background-image: url(../images/services/icon-2.svg);
       }
     }
 
     &--cottage {
       &::before {
-        background-image: url(../../images/services/icon-3.svg);
+        background-image: url(../images/services/icon-3.svg);
       }
     }
 
     &--corporate {
       &::before {
-        background-image: url(../../images/services/icon-4.svg);
+        background-image: url(../images/services/icon-4.svg);
       }
     }
   }
@@ -296,37 +296,37 @@
 
     &--window {
       &::before {
-        background-image: url(../../images/services/popup-icon1.svg);
+        background-image: url(../images/services/popup-icon1.svg);
       }
     }
 
     &--lamination {
       &::before {
-        background-image: url(../../images/services/popup-icon1.svg);
+        background-image: url(../images/services/popup-icon1.svg);
       }
     }
 
     &--sill {
       &::before {
-        background-image: url(../../images/services/popup-icon2.svg);
+        background-image: url(../images/services/popup-icon2.svg);
       }
     }
 
     &--color {
       &::before {
-        background-image: url(../../images/services/popup-icon3.svg);
+        background-image: url(../images/services/popup-icon3.svg);
       }
     }
 
     &--ventilators {
       &::before {
-        background-image: url(../../images/services/popup-icon4.svg);
+        background-image: url(../images/services/popup-icon4.svg);
       }
     }
 
     &--mosquito {
       &::before {
-        background-image: url(../../images/services/popup-icon5.svg);
+        background-image: url(../images/services/popup-icon5.svg);
       }
     }
   }

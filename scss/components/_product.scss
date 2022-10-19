@@ -146,14 +146,14 @@
   }
 
   &__name {
-    background-color: #FFF;
+    background-color: #fff;
     bottom: -13px;
     position: relative;
     padding-right: 2px;
   }
 
   &__num {
-    background-color: #FFF;
+    background-color: #fff;
     bottom: -13px;
     position: absolute;
     right: 0;
@@ -183,13 +183,13 @@
 
     &--prev {
       left: 0;
-      mask-image: url(../../images/icons/slider-arrow-left.svg);
+      mask-image: url(../images/icons/slider-arrow-left.svg);
 
     }
 
     &--next {
       right: 0;
-      mask-image: url(../../images/icons/slider-arrow-rigth.svg);
+      mask-image: url(../images/icons/slider-arrow-rigth.svg);
     }
 
     &:hover {
@@ -304,27 +304,27 @@
     }
 
     &--sertification::before {
-      background-image: url(../../images/product/icon-1.svg);
+      background-image: url(../images/product/icon-1.svg);
       height: 93px;
     }
 
     &--factory::before {
-      background-image: url(../../images/product/icon-2.svg);
+      background-image: url(../images/product/icon-2.svg);
       height: 78px;
     }
 
     &--leader::before {
-      background-image: url(../../images/product/icon-3.svg);
+      background-image: url(../images/product/icon-3.svg);
       height: 75px;
     }
 
     &--equipment::before {
-      background-image: url(../../images/product/icon-4.svg);
+      background-image: url(../images/product/icon-4.svg);
       height: 92px;
     }
 
     &--assortment::before {
-      background-image: url(../../images/product/icon-5.svg);
+      background-image: url(../images/product/icon-5.svg);
       height: 99px;
     }
   }
