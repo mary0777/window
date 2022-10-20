@@ -237,9 +237,11 @@
 
   &__img {
     max-width: 307px;
+    object-fit: contain;
 
     @include r($r-sm) {
       height: 180px;
+      max-width: 100%;
     }
   }
 

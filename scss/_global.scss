@@ -15,6 +15,28 @@ body {
   flex-direction: column;
 }
 
+.lock {
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  z-index: 10;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .main {
+    z-index: 0;
+  }
+}
+
 .main {
   flex: 1 1 auto;
   padding-top: 99px;
@@ -41,26 +63,6 @@ body {
   max-width: 1230px;
   padding: 0 15px;
   margin: 0 auto;
-}
-
-.lock {
-  overflow: hidden;
-  position: relative;
-  height: auto;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .main {
-    z-index: -1;
-  }
 }
 
 .label-checkbox {

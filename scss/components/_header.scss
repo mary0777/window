@@ -2,9 +2,9 @@
   background-color: #fff;
   position: absolute;
   width: 100%;
-  z-index: 10;
 
   &--fixed {
+    z-index: 3;
     position: fixed;
     border-bottom: 1px solid $c-default;
     animation: slide-down 0.7s;
@@ -38,6 +38,19 @@
   }
 
   &--active {
+    position: relative;
+    margin-left: -15px;
+
+    &::after {
+      @include pseudo;
+      content: "";
+      left: -15px;
+      right: -15px;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .5);
+      z-index: 0;
+    }
 
     .menu__list {
       transform: translateX(0);
